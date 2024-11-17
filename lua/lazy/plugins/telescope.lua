@@ -127,7 +127,7 @@ return {
 		{
 			"<leader>a",
 			function()
-				require("telescope.builtin").diagnostics()
+				require("telescope.builtin").diagnostics({ bufnr = 0 })
 			end,
 			desc = "Telescope List All Static Compiling Errors",
 		},
