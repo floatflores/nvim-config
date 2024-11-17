@@ -4,7 +4,7 @@ return {
 	keys = {
 		{
 			"<leader>rn",
-			":IncRename",
+			":IncRename ",
 			desc = "Rename Parameter Under Cursor",
 		},
 	},
