@@ -3,7 +3,7 @@ return {
 	ft = { "c", "cpp", "python", "java", "javascript", "lua" },
 	keys = {
 		{
-			"<leader>rn",
+			"rn",
 			":IncRename ",
 			desc = "Rename Parameter Under Cursor",
 		},

@@ -9,6 +9,8 @@ return {
 		"p00f/nvim-ts-rainbow",
 		-- Syntax aware text-objects, select, move, swap, and peek support
 		"nvim-treesitter/nvim-treesitter-textobjects",
+		-- Represent class or function signature while navigating a long code
+		"nvim-treesitter/nvim-treesitter-context",
 		-- comment cursor line using "gcc" or "gc"
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		-- Use treesitter to autoclose and autorename html tag
