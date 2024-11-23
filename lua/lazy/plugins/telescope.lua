@@ -60,13 +60,13 @@ return {
 			end,
 			desc = "Telescope grep current file",
 		},
-		{
-			"<leader>q",
-			function()
-				require("telescope.builtin").quickfix()
-			end,
-			desc = "Telescope List All Dynamic Compiling Errors",
-		},
+		-- {
+		-- 	"<leader>q",
+		-- 	function()
+		-- 		require("telescope.builtin").quickfix()
+		-- 	end,
+		-- 	desc = "Telescope List All Dynamic Compiling Errors",
+		-- },
 		{
 			"<leader>h",
 			function()
@@ -124,13 +124,13 @@ return {
 			end,
 			desc = "Telescope Goto Type Defnitions",
 		},
-		{
-			"<leader>a",
-			function()
-				require("telescope.builtin").diagnostics({ bufnr = 0 })
-			end,
-			desc = "Telescope List All Static Compiling Errors",
-		},
+		-- {
+		-- 	"<leader>a",
+		-- 	function()
+		-- 		require("telescope.builtin").diagnostics({ bufnr = 0 })
+		-- 	end,
+		-- 	desc = "Telescope List All Static Compiling Errors",
+		-- },
 	},
 	config = function()
 		require("telescope").setup({

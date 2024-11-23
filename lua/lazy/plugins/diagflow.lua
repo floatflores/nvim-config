@@ -1,7 +1,6 @@
 return {
 	-- provides a neat and distraction-free way to display LSP diagnostics
 	"dgagn/diagflow.nvim",
-	-- enabled = false,
 	event = "LspAttach",
 	config = function()
 		require("diagflow").setup({

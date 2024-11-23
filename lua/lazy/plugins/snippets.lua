@@ -1,8 +1,8 @@
 return {
 	"L3MON4D3/LuaSnip", -- auto-completion cant work without this
-	event = "VeryLazy",
-	ft = { "lua", "python", "c", "cpp" },
+	event = "LspAttach",
 	dependencies = {
+		"williamboman/mason.nvim",
 		"rafamadriz/friendly-snippets",
 	},
 	opts = {

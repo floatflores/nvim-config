@@ -1,7 +1,6 @@
 return {
 	"lukas-reineke/indent-blankline.nvim",
-	lazy = true,
-	ft = { "c", "cpp", "java", "lua", "python", "json", "markdown" },
+	event = "VeryLazy",
 	opts = {
 		scope = {
 			show_start = false,

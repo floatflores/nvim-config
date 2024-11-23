@@ -1,7 +1,6 @@
 return {
 	"stevearc/conform.nvim",
-	event = "VeryLazy",
-	ft = { "lua", "python", "c", "cpp", "java", "json", "javascript", "toml", "html", "markdown" },
+	event = "InsertEnter",
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {

@@ -1,7 +1,6 @@
 return {
 	"williamboman/mason.nvim",
-	lazy = true,
-	ft = { "lua", "python", "c", "cpp", "java", "json", "javascript", "toml", "html", "markdown" },
+	event = "VeryLazy",
 	dependencies = {
 		{
 			"williamboman/mason-lspconfig.nvim",

@@ -1,8 +1,7 @@
 return {
 	"stevearc/aerial.nvim",
-	lazy = true,
 	keys = {
-		{ "<F12>", "<cmd>AerialToggle!<CR>", desc = "Show all funtions in current file" },
+		{ "<F12>", "<cmd>AerialToggle!<CR>", mode = {"n"}, desc = "Show all funtions in current file" },
 	},
 	config = function()
 		require("aerial").setup({
@@ -22,8 +21,6 @@ return {
 				},
 			},
 		})
-		-- You probably also want to set a keymap to toggle aerial
-		vim.keymap.set("n", "<F12>", "<cmd>AerialToggle!<CR>")
 		local found_telescope, telescope = pcall(require, "telescope")
 		if found_telescope then
 			telescope.load_extension("aerial")

@@ -1,7 +1,6 @@
 return {
 	"mfussenegger/nvim-lint",
-	lazy = true,
-	ft = { "python", "c", "cpp", "lua", "json", "javascript", "html", "cmake", "sh", "markdown" },
+	event = "BufReadPost",
 	config = function()
 		local lint = require("lint")
 		lint.linters_by_ft = {
