@@ -1,6 +1,6 @@
 return {
 	"stevearc/aerial.nvim",
-	event = "VeryLazy",
+	lazy = true,
 	keys = {
 		{ "<F12>", "<cmd>AerialToggle!<CR>", desc = "Show all funtions in current file" },
 	},

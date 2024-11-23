@@ -1,6 +1,6 @@
 return {
 	"utilyre/barbecue.nvim",
-	ft = { "c", "cpp", "python", "java", "javascript", "lua" },
+	event = "VeryLazy",
 	name = "barbecue",
 	version = "*",
 	dependencies = {

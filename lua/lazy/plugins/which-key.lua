@@ -1,5 +1,6 @@
 return {
 	"folke/which-key.nvim",
+	event = "VeryLazy",
 	opts = {
 		spec = {
 			{ "<BS>", desc = "Decrement Selection", mode = "x" },

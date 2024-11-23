@@ -2,7 +2,7 @@ return {
 	-- provides a neat and distraction-free way to display LSP diagnostics
 	"dgagn/diagflow.nvim",
 	-- enabled = false,
-	ft = { "lua", "python", "c", "cpp", "java", "json", "javascript", "toml", "html", "markdown" },
+	event = "LspAttach",
 	config = function()
 		require("diagflow").setup({
 			enable = true,

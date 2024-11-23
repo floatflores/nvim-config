@@ -1,6 +1,6 @@
 return {
 	"stevearc/conform.nvim",
-	lazy = true,
+	event = "VeryLazy",
 	ft = { "lua", "python", "c", "cpp", "java", "json", "javascript", "toml", "html", "markdown" },
 	config = function()
 		require("conform").setup({

@@ -1,5 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
+	event = "VeryLazy",
 	ft = { "lua", "python", "c", "cpp" },
 	dependencies = { { "williamboman/mason-lspconfig.nvim", config = true } },
 	config = function()

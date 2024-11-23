@@ -1,6 +1,9 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	ft = { "lua", "python", "c", "cpp", "java", "json", "javascript", "toml", "html", "markdown" },
+	-- event = "BufReadPost  *.cpp ", -- | *.java | *.json | *.js | *.toml | *.html | *.md | *.lua | *.py | *.c |",
+	-- event = "BufReadPost",
+	event = "VeryLazy",
+	-- ft = { "lua", "python", "c", "cpp", "java", "json", "javascript", "toml", "html", "markdown" },
 	version = false,
 	build = ":TSUpdate",
 	main = "nvim-treesitter.configs",

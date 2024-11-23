@@ -1,8 +1,7 @@
 return {
 	-- lint and error signs
 	"folke/trouble.nvim",
-	lazy = true,
-	ft = { "lua", "python", "java", "cpp", "c", "json", "markdown", "toml", "yaml", "cmake" },
+	cmd = "Trouble",
 	config = function()
 		require("trouble").setup({
 			icons = {

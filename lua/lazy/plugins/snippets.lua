@@ -1,5 +1,6 @@
 return {
 	"L3MON4D3/LuaSnip", -- auto-completion cant work without this
+	event = "VeryLazy",
 	ft = { "lua", "python", "c", "cpp" },
 	dependencies = {
 		"rafamadriz/friendly-snippets",

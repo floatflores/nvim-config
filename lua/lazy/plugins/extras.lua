@@ -1,10 +1,10 @@
 return {
-	{ "christoomey/vim-tmux-navigator" },
+	{ "christoomey/vim-tmux-navigator", event = "VeryLazy" },
 
 	-- pinyin input method
 	{
 		"h-hg/fcitx.nvim",
-		event = "BufReadPost",
+		event = "VeryLazy",
 		config = function() end,
 	},
 	-- manual saved session
@@ -16,12 +16,14 @@ return {
 	-- session and projects
 	{
 		"stevearc/stickybuf.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("stickybuf").setup()
 		end,
 	},
 	{
 		"ethanholz/nvim-lastplace",
+		lazy = false,
 		config = function()
 			require("nvim-lastplace").setup()
 		end,

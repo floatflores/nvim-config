@@ -1,5 +1,6 @@
 return {
 	"smjonas/inc-rename.nvim",
+	event = "VeryLazy",
 	ft = { "c", "cpp", "python", "java", "javascript", "lua" },
 	keys = {
 		{

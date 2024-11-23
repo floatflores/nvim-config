@@ -1,6 +1,7 @@
 return {
 	-- Show function signature when you type
 	"ray-x/lsp_signature.nvim",
+	event = "VeryLazy",
 	ft = { "lua", "python", "c", "cpp" },
 	config = function()
 		require("lsp_signature").setup({
