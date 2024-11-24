@@ -120,7 +120,7 @@ return {
 		{
 			"gt",
 			function()
-				require("telescope.builtin").lsp_type_definitions()
+				require("telescope.builtin").lsp_type_definitions({ initial_mode = "insert" })
 			end,
 			desc = "Telescope Goto Type Defnitions",
 		},
@@ -131,6 +131,13 @@ return {
 		-- 	end,
 		-- 	desc = "Telescope List All Static Compiling Errors",
 		-- },
+		{
+			"<leader>ks",
+			function()
+				require("telescope.builtin").keymaps()
+			end,
+			desc = "Telescope List All Keymaps",
+		},
 	},
 	config = function()
 		require("telescope").setup({
