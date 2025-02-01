@@ -53,7 +53,6 @@ return {
 				{ name = "buffer" },
 				{ name = "rg" },
 				{ name = "path" },
-				{ name = "calc" },
 			}),
 			-- experimental = {
 			-- 	ghost_text = true,

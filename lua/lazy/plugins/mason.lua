@@ -27,7 +27,7 @@ return {
 			"lua-language-server", -- lua-lsp
 		}
 		local linter_list = {
-			"cpplint", -- c/c++ linter
+			-- "cpplint", -- c/c++ linter
 			"flake8", -- python linter
 			"cmakelint", -- cmake linter
 			"luacheck", -- lua linter
@@ -45,24 +45,12 @@ return {
 			"prettier",
 		}
 		local mr = require("mason-registry")
-		for _, lsp in ipairs(lsp_list) do
-			if not mr.is_installed(lsp) then
-				vim.notify("Mason::Installing missing LSP...")
-				vim.cmd("MasonInstall " .. lsp)
-			end
-		end
 
-		for _, linter in ipairs(linter_list) do
-			if not mr.is_installed(linter) then
-				vim.notify("Mason::Installing missing Linter...")
-				vim.cmd("MasonInstall " .. linter)
-			end
-		end
+		local tools_list = vim.list_extend(vim.list_extend(lsp_list, linter_list), formatter_list)
 
-		for _, formatter in ipairs(formatter_list) do
-			if not mr.is_installed(formatter) then
-				vim.notify("Mason::Installing missing Formatter...")
-				vim.cmd("MasonInstall " .. formatter)
+		for _, tool in ipairs(tools_list) do
+			if not mr.is_installed(tool) then
+				vim.cmd("MasonInstall " .. tool)
 			end
 		end
 	end,

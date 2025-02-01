@@ -44,7 +44,7 @@ return {
 					node_decremental = "-",
 				},
 			},
-			ensure_installed = { "c", "cpp", "cmake", "python", "lua", "json", "sql" },
+			ensure_installed = { "c", "cpp", "cmake", "python", "lua", "json", "sql", "bash", "toml", "yaml", "java" },
 			treehopper = { enable = true },
 			context = { enable = true },
 			textobjects = {
