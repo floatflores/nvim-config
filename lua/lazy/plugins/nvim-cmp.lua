@@ -8,13 +8,13 @@ return {
 		"f3fora/cmp-spell",
 		"hrsh7th/cmp-calc",
 		"hrsh7th/cmp-emoji",
-		"hrsh7th/cmp-cmdline",
+		-- "hrsh7th/cmp-cmdline",
 		"lukas-reineke/cmp-rg",
 		"saadparwaiz1/cmp_luasnip",
 		"onsails/lspkind-nvim",
 		"lukas-reineke/cmp-under-comparator",
 		"lukas-reineke/cmp-rg",
-		"hrsh7th/cmp-nvim-lsp-signature-help",
+		-- "hrsh7th/cmp-nvim-lsp-signature-help",
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -44,7 +44,7 @@ return {
 			sources = cmp.config.sources({
 				{ name = "luasnip" },
 				{ name = "nvim_lsp" },
-				{ name = "nvim_lsp_signature_help" },
+				-- { name = "nvim_lsp_signature_help" },
 				{ name = "vim-dadbod-completion" },
 				{ name = "lazydev" },
 				{ name = "calc" },
@@ -53,6 +53,7 @@ return {
 				{ name = "buffer" },
 				{ name = "rg" },
 				{ name = "path" },
+				-- { name = "cmdline" },
 			}),
 			-- experimental = {
 			-- 	ghost_text = true,
