@@ -13,7 +13,6 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"onsails/lspkind-nvim",
 		"lukas-reineke/cmp-under-comparator",
-		"lukas-reineke/cmp-rg",
 		-- "hrsh7th/cmp-nvim-lsp-signature-help",
 	},
 	config = function()
@@ -24,6 +23,7 @@ return {
 			},
 			completion = {
 				completeopt = "menu,menuone,noinsert,noselect",
+				keyword_length = 2,
 			},
 			preselect = cmp.PreselectMode.Insert,
 			-- confirmation = {
