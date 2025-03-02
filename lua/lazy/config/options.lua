@@ -42,4 +42,13 @@ vim.keymap.set("n", "<ESC>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = " Goto previous [D]iagnostic message" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_next, { desc = " Goto next [D]iagnostic message" })
 
+-- Highlight whtn yanking (copying) text
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "Highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("Highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
+
 vim.cmd("filetype plugin indent on")
