@@ -1,2 +1,2 @@
-require("lazy/config/lazy")
 require("lazy/config/options")
+require("lazy/config/lazy")
