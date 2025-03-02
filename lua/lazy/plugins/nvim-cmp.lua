@@ -18,12 +18,6 @@ return {
 	},
 	config = function()
 		local cmp = require("cmp")
-		local function has_words_before()
-			local cursor = vim.api.nvim_win_get_cursor(0)
-			local line = cursor[1]
-			local col = cursor[2]
-			return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-		end
 		cmp.setup({
 			view = {
 				entries = "custom",
@@ -44,7 +38,6 @@ return {
 			sources = cmp.config.sources({
 				{ name = "luasnip" },
 				{ name = "nvim_lsp" },
-				-- { name = "nvim_lsp_signature_help" },
 				{ name = "vim-dadbod-completion" },
 				{ name = "lazydev" },
 				{ name = "calc" },
@@ -53,7 +46,6 @@ return {
 				{ name = "buffer" },
 				{ name = "rg" },
 				{ name = "path" },
-				-- { name = "cmdline" },
 			}),
 			-- experimental = {
 			-- 	ghost_text = true,
@@ -83,8 +75,8 @@ return {
 				}),
 				-- NOTE: almost never use
 				["<C-o>"] = cmp.mapping(cmp.mapping.close_docs(), { "i" }),
-				["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-				["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+				["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4)),
+				["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4)),
 			},
 
 			formatting = {

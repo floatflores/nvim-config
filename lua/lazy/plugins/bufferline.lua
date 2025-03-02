@@ -5,12 +5,12 @@ return {
 	keys = {
 		{ "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
 		{ "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
-		{ "<leader>bp", "<cmd>BufferLineTogglePin<cr>", desc = "Pin Current Buffer" },
-		{ "<leader>bcl", "<cmd>BufferLineCloseLeft<cr>", desc = "Close Left Buffer" },
-		{ "<leader>bcr", "<cmd>BufferLineCloseRight<cr>", desc = "Close Right Buffer" },
-		{ "<leader>bco", "<cmd>BufferLineCloseOthers<cr>", desc = "Close other Buffer" },
-		{ "<leader>bcP", "<cmd>BufferLineClose ungrouped<cr>", desc = "Close Unpinned Buffer" },
-		{ "gb0", "<cmd>BufferLineGoToBuffer -1<cr>", desc = "Goto First Buffer" },
+		{ "<leader>bp", "<cmd>BufferLineTogglePin<cr>", desc = "[B]uffer [P]in" },
+		{ "<leader>bcl", "<cmd>BufferLineCloseLeft<cr>", desc = "[B]uffer [C]lose [L]eft" },
+		{ "<leader>bcr", "<cmd>BufferLineCloseRight<cr>", desc = "[B]uffer [C]lose [R]ight" },
+		{ "<leader>bco", "<cmd>BufferLineCloseOthers<cr>", desc = "[B]uffer [C]lose [O]thers" },
+		{ "<leader>bcP", "<cmd>BufferLineClose ungrouped<cr>", desc = "[B]uffer [C]lose un[P]inned" },
+		{ "gb0", "<cmd>BufferLineGoToBuffer -1<cr>", desc = "[G]oto [B]uffer [0]" },
 	},
 	config = function()
 		local bufferline = require("bufferline")

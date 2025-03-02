@@ -16,49 +16,49 @@ return {
 			function()
 				require("telescope.builtin").find_files({ hidden = true, initial_mode = "insert" })
 			end,
-			desc = "Telescope find file (cwd)",
+			desc = "Telescope [F]ind [F]ile (cwd)",
 		},
 		{
-			"<leader>FF",
+			"<leader>fF",
 			function()
 				require("telescope.builtin").find_files({ hidden = true, cwd = "/", initial_mode = "insert" })
 			end,
-			desc = "Telescope find file (Root)",
+			desc = "Telescope [F]ind [F]ile (Root)",
 		},
 		{
-			"<leader>fg",
+			"<leader>fs",
 			function()
 				require("telescope.builtin").live_grep({ initial_mode = "insert" })
 			end,
-			desc = "Telescope live grep (cwd)",
+			desc = "Telescope [F]ind [S]tring (cwd)",
 		},
 		{
-			"<leader>FG",
+			"<leader>fS",
 			function()
 				require("telescope.builtin").live_grep({ cwd = "/", initial_mode = "insert" })
 			end,
-			desc = "Telescope live grep (Root)",
+			desc = "Telescope [F]ind [S]tring (Root)",
 		},
 		{
-			"<leader>fsg",
+			"<leader>gs",
 			function()
 				require("telescope.builtin").grep_string({ initial_mode = "insert" })
 			end,
-			desc = "Telescope grep string (under cursor from cwd)",
+			desc = "Telescope [G]rep [S]tring (under cursor from cwd)",
 		},
 		{
-			"<leader>FSG",
+			"<leader>gS",
 			function()
 				require("telescope.builtin").grep_string({ cwd = "/", initial_mode = "insert" })
 			end,
-			desc = "Telescope grep string (under cursor from Root)",
+			desc = "Telescope [G]rep [S]tring (under cursor from Root)",
 		},
 		{
 			"<leader>f.",
 			function()
 				require("telescope.builtin").current_buffer_fuzzy_find({ initial_mode = "insert" })
 			end,
-			desc = "Telescope grep current file",
+			desc = "Telescope grep [F]rom [.]current file",
 		},
 		{
 			"<leader>h",
@@ -68,25 +68,25 @@ return {
 			desc = "Telescope History Files",
 		},
 		{
-			"<leader>/",
+			"<leader>h/",
 			function()
 				require("telescope.builtin").search_history({ initial_mode = "insert" })
 			end,
-			desc = "Telescope Search History",
+			desc = "Telescope [H]istory [/]Search",
 		},
 		{
-			"<leader>fb",
+			"<leader>sb",
 			function()
 				require("telescope.builtin").buffers({ initial_mode = "insert" })
 			end,
-			desc = "Telescope Show Buffers",
+			desc = "Telescope [S]how [B]uffers",
 		},
 		{
-			"<leader>mm",
+			"<leader>sm",
 			function()
 				require("telescope.builtin").marks({ initial_mode = "insert" })
 			end,
-			desc = "Telescope Show All Marks",
+			desc = "Telescope [S]how All [M]arks",
 		},
 		-- lsp configuration,
 		{
@@ -94,35 +94,35 @@ return {
 			function()
 				require("telescope.builtin").lsp_definitions()
 			end,
-			desc = "Telescope Goto Definition",
+			desc = "Telescope [G]oto [D]efinition",
 		},
 		{
 			"gr",
 			function()
 				require("telescope.builtin").lsp_references()
 			end,
-			desc = "Telescope Goto References",
+			desc = "Telescope [G]oto [R]eferences",
 		},
 		{
 			"gi",
 			function()
 				require("telescope.builtin").lsp_implementations()
 			end,
-			desc = "Telescope Goto Implementations",
+			desc = "Telescope [G]oto [I]mplementations",
 		},
 		{
 			"gt",
 			function()
 				require("telescope.builtin").lsp_type_definitions({ initial_mode = "insert" })
 			end,
-			desc = "Telescope Goto Type Defnitions",
+			desc = "Telescope [G]oto [T]ype Defnitions",
 		},
 		{
-			"<leader>ks",
+			"<leader>km",
 			function()
 				require("telescope.builtin").keymaps()
 			end,
-			desc = "Telescope List All Keymaps",
+			desc = "Telescope List All [K]ey[M]aps",
 		},
 	},
 	config = function()

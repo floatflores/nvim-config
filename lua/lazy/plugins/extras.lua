@@ -39,9 +39,4 @@ return {
 		lazy = false,
 		config = true,
 	},
-	{
-		"tribela/transparent.nvim",
-		config = true,
-		enabled = false,
-	},
 }

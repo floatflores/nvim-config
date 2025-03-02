@@ -17,6 +17,13 @@ return {
 				timeout_ms = 500,
 				lsp_fallback = "fallback",
 			},
+			formatters = {
+				my_formatter = {
+					cmd = "clang-format",
+					args = { "--style=file:~/.local/configuration/.clang-format" },
+				},
+			},
+			-- formatters =
 			vim.keymap.set({ "n", "v" }, "<leader>mp", function()
 				require("conform").format({
 					timeout_ms = 500,
