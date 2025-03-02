@@ -61,11 +61,11 @@ return {
 			desc = "Telescope grep [F]rom [.]current file",
 		},
 		{
-			"<leader>h",
+			"<leader>hf",
 			function()
 				require("telescope.builtin").oldfiles({ initial_mode = "insert" })
 			end,
-			desc = "Telescope History Files",
+			desc = "Telescope [H]istory [F]iles",
 		},
 		{
 			"<leader>h/",

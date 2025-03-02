@@ -5,8 +5,6 @@ return {
 	dependencies = {
 		"p00f/nvim-ts-rainbow",
 		"nvim-treesitter/nvim-treesitter-context",
-		-- Use treesitter to autoclose and autorename html tag
-		-- "windwp/nvim-ts-autotag",
 		-- matchup pair of key-word/key-operator
 		"andymass/vim-matchup",
 	},
@@ -21,8 +19,25 @@ return {
 		},
 		autotag = { enable = true },
 		matchup = { enable = true },
-		ensure_installed = { "c", "cpp", "cmake", "python", "lua", "json", "sql", "bash", "toml", "yaml", "java" },
-		treehopper = { enable = true },
+		ensure_installed = {
+			"c",
+			"cpp",
+			"cmake",
+			"python",
+			"lua",
+			"json",
+			"sql",
+			"bash",
+			"toml",
+			"yaml",
+			"java",
+			"markdown",
+			"vim",
+			"vimdoc",
+			"diff",
+			"html",
+			"javascript",
+		},
 		context = { enable = true },
 	},
 }
