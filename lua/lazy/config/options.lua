@@ -12,10 +12,10 @@ opt.showcmd = true
 opt.cursorline = true
 opt.showmode = false
 
-opt.tabstop = 2
+opt.tabstop = 4
 opt.shiftwidth = 2
 opt.breakindent = true
--- opt.undofile = true
+opt.undofile = true
 opt.autoindent = true
 opt.expandtab = true
 
@@ -50,5 +50,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+-- Undotree keymap
+vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>", { desc = "[U]ndotree Toggle" })
 
 vim.cmd("filetype plugin indent on")

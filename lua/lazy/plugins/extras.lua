@@ -38,4 +38,8 @@ return {
 		lazy = false,
 		config = true,
 	},
+	{
+		-- Visualize undo history
+		"mbbill/undotree",
+	},
 }
