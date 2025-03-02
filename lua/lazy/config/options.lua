@@ -14,9 +14,10 @@ opt.showmode = false
 
 opt.tabstop = 4
 opt.shiftwidth = 4
+
 opt.breakindent = true
 opt.undofile = true
-opt.autoindent = true
+-- opt.autoindent = true
 opt.expandtab = true
 
 opt.ignorecase = true
