@@ -41,7 +41,7 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSig
 
 vim.keymap.set("n", "<ESC>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = " Goto previous [D]iagnostic message" })
-vim.keymap.set("n", "[d", vim.diagnostic.goto_next, { desc = " Goto next [D]iagnostic message" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = " Goto next [D]iagnostic message" })
 
 -- Highlight whtn yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -52,7 +52,19 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- Undotree keymap
-vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<CR>", { desc = "[U]ndotree Toggle" })
+vim.keymap.set(
+	"n",
+	"gp",
+	"<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
+	{ desc = "[G]oto [P]review Definition" }
+)
+vim.keymap.set(
+	"n",
+	"gP",
+	"<cmd>lua require('goto-preview').goto_preview_declaration()<CR>",
+	{ desc = "[G]oto [P]review Declaration" }
+)
+-- undotree keymap
+vim.keymap.set("n", "<leader>u", "<cmd>undotreetoggle<cr>", { desc = "[u]ndotree toggle" })
 
 vim.cmd("filetype plugin indent on")

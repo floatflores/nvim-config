@@ -89,34 +89,34 @@ return {
 			desc = "Telescope [S]how All [M]arks",
 		},
 		-- lsp configuration,
-		-- {
-		-- 	"gd",
-		-- 	function()
-		-- 		require("telescope.builtin").lsp_definitions()
-		-- 	end,
-		-- 	desc = "Telescope [G]oto [D]efinition",
-		-- },
-		-- {
-		-- 	"gr",
-		-- 	function()
-		-- 		require("telescope.builtin").lsp_references()
-		-- 	end,
-		-- 	desc = "Telescope [G]oto [R]eferences",
-		-- },
-		-- {
-		-- 	"gi",
-		-- 	function()
-		-- 		require("telescope.builtin").lsp_implementations()
-		-- 	end,
-		-- 	desc = "Telescope [G]oto [I]mplementations",
-		-- },
-		-- {
-		-- 	"gt",
-		-- 	function()
-		-- 		require("telescope.builtin").lsp_type_definitions({ initial_mode = "insert" })
-		-- 	end,
-		-- 	desc = "Telescope [G]oto [T]ype Defnitions",
-		-- },
+		{
+			"gd",
+			function()
+				require("telescope.builtin").lsp_definitions()
+			end,
+			desc = "Telescope [G]oto [D]efinition",
+		},
+		{
+			"gr",
+			function()
+				require("telescope.builtin").lsp_references()
+			end,
+			desc = "Telescope [G]oto [R]eferences",
+		},
+		{
+			"gi",
+			function()
+				require("telescope.builtin").lsp_implementations()
+			end,
+			desc = "Telescope [G]oto [I]mplementations",
+		},
+		{
+			"gt",
+			function()
+				require("telescope.builtin").lsp_type_definitions({ initial_mode = "insert" })
+			end,
+			desc = "Telescope [G]oto [T]ype Defnitions",
+		},
 		{
 			"<leader>km",
 			function()

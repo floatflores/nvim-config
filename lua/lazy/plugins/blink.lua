@@ -33,7 +33,7 @@ return {
 			["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
 			["<C-f>"] = { "scroll_documentation_up", "fallback" },
 			["<C-b>"] = { "scroll_documentation_up", "fallback" },
-			["<CR>"] = { "select_and_accept", "fallback" },
+			["<CR>"] = { "accept", "fallback" },
 		},
 		completion = {
 			keyword = { range = "full" },

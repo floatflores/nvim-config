@@ -6,6 +6,8 @@ return {
 		{
 			"rmagatti/goto-preview",
 			dependencies = { "rmagatti/logger.nvim" },
+      event = "BufEnter",
+  config = true,
 		},
 	},
 	config = function()
@@ -27,7 +29,7 @@ return {
 				settings = {
 					Lua = {
 						completion = {
-							callSnippet = "Replace",
+							-- callSnippet = "Replace",
 							showParams = true,
 						},
 					},
@@ -75,6 +77,7 @@ return {
 			config.handlers = vim.tbl_deep_extend("force", {}, custom_handlers, config.handlers or {})
 			require("lspconfig")[server_name].setup(config)
 		end
+
 		for server_name, server_opt in pairs(servers) do
 			setup_server(server_name, server_opt)
 		end
