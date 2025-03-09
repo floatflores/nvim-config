@@ -5,10 +5,7 @@ return {
 		{ "williamboman/mason-lspconfig.nvim", config = true },
 		{
 			"rmagatti/goto-preview",
-			keys = { "gp" },
 			dependencies = { "rmagatti/logger.nvim" },
-			event = "BufEnter",
-			opts = {},
 		},
 	},
 	config = function()
