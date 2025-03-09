@@ -32,6 +32,7 @@ return {
 			"yaml",
 			"java",
 			"markdown",
+			"latex",
 			"vim",
 			"vimdoc",
 			"diff",

@@ -4,12 +4,9 @@ return {
 	config = function()
 		local lint = require("lint")
 		lint.linters_by_ft = {
-			-- c = { "clang_tidy" },
-			-- cpp = { "clang_tidy" },
-			python = { "flake8" },
+			python = { "ruff" },
 			cmake = { "cmakelint" },
 			lua = { "luacheck" },
-			markdown = { "vale" },
 			json = { "jsonlint" },
 		}
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

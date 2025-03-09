@@ -11,6 +11,9 @@ return {
 	config = function()
 		require("mason").setup({
 			ui = {
+				border = "single",
+				width = 0.7,
+				height = 0.7,
 				icons = {
 					package_installed = "✓",
 					package_pending = "➜",
@@ -21,28 +24,25 @@ return {
 		local lsp_list = {
 			"clangd", -- c/c++ lsp
 			"json-lsp", -- json-lsp
-			"ltex-ls", -- markdown-lsp for latex check
-			"markdown-oxide", -- markdown-lsp for linting
-			"pyright", -- python-lsp
+			"marksman", -- markdown-lsp
+			"texlab", -- laTex lsp
+			"basedpyright", -- python-lsp
 			"lua-language-server", -- lua-lsp
 		}
 		local linter_list = {
-			-- "cpplint", -- c/c++ linter
-			"flake8", -- python linter
+			"ruff", -- python linter
 			"cmakelint", -- cmake linter
 			"luacheck", -- lua linter
-			"vale", -- latex/markdown linter
 			"jsonlint", -- json linter
 		}
 		local formatter_list = {
 			"clang-format", -- c/c++ formatter
 			"stylua", -- lua formatter
-			"black", -- python formatter
+			"isort", -- python formatter
 			"autoflake", -- python formatter
 			"cmakelang", -- cmake formatter
 			"fixjson", -- json formatter
 			"mdformat", -- markdown formatter
-			"prettier",
 		}
 		local mr = require("mason-registry")
 

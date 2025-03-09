@@ -1,5 +1,6 @@
 return {
 	"hrsh7th/nvim-cmp",
+	enabled = false,
 	event = "InsertEnter",
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
@@ -39,6 +40,7 @@ return {
 				{ name = "luasnip" },
 				{ name = "nvim_lsp" },
 				{ name = "vim-dadbod-completion" },
+				-- { name = "cmdline" },
 				{ name = "lazydev" },
 				{ name = "calc" },
 				{ name = "emoji" },
