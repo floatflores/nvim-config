@@ -58,7 +58,7 @@ return {
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { "lsp", "path", "snippets", "buffer", "dadbod", "lazydev" },
+			default = { "lsp", "path", "snippets", "buffer", "dadbod", "lazydev", "markdown" },
 			per_filetype = { sql = { "dadbod" } },
 			providers = {
 				buffer = { score_offset = 4 },
@@ -74,6 +74,12 @@ return {
 					name = "LazyDev",
 					module = "lazydev.integrations.blink",
 					-- make lazydev completions top priority (see `:h blink.cmp`)
+					score_offset = 100,
+				},
+				markdown = {
+					name = "RenderMarkdown",
+					module = "render-markdown.integ.blink",
+					fallbacks = { "lsp" },
 					score_offset = 100,
 				},
 			},

@@ -44,6 +44,9 @@ return {
 			"fixjson", -- json formatter
 			"mdformat", -- markdown formatter
 		}
+		local debugger_list = {
+			"debugpy", -- python debugger
+		}
 		local mr = require("mason-registry")
 
 		local tools_list = vim.list_extend(vim.list_extend(lsp_list, linter_list), formatter_list)

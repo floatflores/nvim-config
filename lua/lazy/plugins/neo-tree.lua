@@ -57,7 +57,7 @@ return {
 			function()
 				require("neo-tree.command").execute({ toggle = true, source = "buffers" })
 			end,
-			desc = "[B]uffer [E]xplorer",
+			desc = "Neotree [B]uffer [E]xplorer",
 		},
 	},
 }

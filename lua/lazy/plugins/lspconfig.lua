@@ -3,12 +3,6 @@ return {
 	ft = { "lua", "python", "c", "cpp", "md", "json" },
 	dependencies = {
 		{ "williamboman/mason-lspconfig.nvim", config = true },
-		{
-			"rmagatti/goto-preview",
-			dependencies = { "rmagatti/logger.nvim" },
-      event = "BufEnter",
-  config = true,
-		},
 	},
 	config = function()
 		vim.diagnostic.config({

@@ -65,6 +65,6 @@ vim.keymap.set(
 	{ desc = "[G]oto [P]review Declaration" }
 )
 -- undotree keymap
-vim.keymap.set("n", "<leader>u", "<cmd>undotreetoggle<cr>", { desc = "[u]ndotree toggle" })
+vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { desc = "[u]ndotree toggle" })
 
 vim.cmd("filetype plugin indent on")
