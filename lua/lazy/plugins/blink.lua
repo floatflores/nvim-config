@@ -43,7 +43,7 @@ return {
 				auto_show_delay_ms = 500,
 			},
 		},
-		signature = { enabled = true },
+		-- signature = { enabled = true },
 
 		appearance = {
 			-- Sets the fallback highlight groups to nvim-cmp's highlight groups

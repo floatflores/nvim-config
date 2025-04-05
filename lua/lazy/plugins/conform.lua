@@ -10,7 +10,7 @@ return {
 				cmake = { "cmakelang" },
 				markdown = { "mdformat" },
 				json = { "fixjson" },
-				python = { "autoflake", "ruff", "isort" },
+				python = { "autoflake", "ruff", "isort", "black" },
 			},
 			format_on_save = {
 				timeout_ms = 500,

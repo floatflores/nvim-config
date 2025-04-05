@@ -2,7 +2,7 @@ return {
 	"smjonas/inc-rename.nvim",
 	keys = {
 		{
-			"<F2>",
+			"<leader>rn",
 			":IncRename ",
 			desc = "Rename Parameter Under Cursor",
 		},
