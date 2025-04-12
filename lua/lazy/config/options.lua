@@ -1,7 +1,5 @@
 local opt = vim.opt
 
-vim.g.have_nerd_font = true
-
 opt.number = true
 opt.relativenumber = true
 
@@ -17,7 +15,7 @@ opt.shiftwidth = 2
 
 opt.breakindent = true
 opt.undofile = true
--- opt.autoindent = true
+opt.autoindent = true
 opt.expandtab = true
 
 opt.ignorecase = true
@@ -52,19 +50,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
-vim.keymap.set(
-	"n",
-	"gp",
-	"<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
-	{ desc = "[G]oto [P]review Definition" }
-)
-vim.keymap.set(
-	"n",
-	"gP",
-	"<cmd>lua require('goto-preview').goto_preview_declaration()<CR>",
-	{ desc = "[G]oto [P]review Declaration" }
-)
 -- undotree keymap
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { desc = "[u]ndotree toggle" })
-
-vim.cmd("filetype plugin indent on")

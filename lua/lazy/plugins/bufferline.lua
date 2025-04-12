@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
-		"famiu/bufdelete.nvim",
+		-- "famiu/bufdelete.nvim",
 	},
 	keys = {
 		{ "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
@@ -19,9 +19,9 @@ return {
 		local bufferline = require("bufferline")
 		bufferline.setup({
 			options = {
-				close_command = function(bufnum)
-					require("bufdelete").bufdelete(bufnum, true)
-				end,
+				-- close_command = function(bufnum)
+				-- 	require("bufdelete").bufdelete(bufnum, true)
+				-- end,
 				diagnostics = "nvim_lsp",
 				style_preset = {
 					bufferline.style_preset.no_italic,
@@ -36,9 +36,6 @@ return {
 						separator = true,
 					},
 				},
-				-- numbers = function(opts)
-				-- 	return string.format("%s", opts.ordinal)
-				-- end,
 				diagnostics_indicator = function(count, level)
 					local icon = level:match("error") and " " or " "
 					return " " .. icon .. count
