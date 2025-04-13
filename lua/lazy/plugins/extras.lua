@@ -37,8 +37,12 @@ return {
 		lazy = false,
 		config = true,
 	},
+	-- Visualize undo history
 	{
-		-- Visualize undo history
 		"mbbill/undotree",
+	},
+	-- optimus perfomance when trying to open a big file
+	{
+		"LunarVim/bigfile.nvim",
 	},
 }

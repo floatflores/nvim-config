@@ -16,6 +16,28 @@ return {
 			require("mini.surround").setup()
 
 			require("mini.pairs").setup({ modes = { insert = true, command = true, terminal = false } })
+
+			require("mini.files").setup({
+				mappings = {
+					close = "Q",
+					go_in = "l",
+					go_in_plus = "L",
+					go_out = "h",
+					go_out_plus = "H",
+					mark_goto = "'",
+					mark_set = "m",
+					reset = "<BS>",
+					reveal_cwd = "@",
+					show_help = "g?",
+					synchronize = "=",
+					trim_left = "<",
+					trim_right = ">",
+				},
+
+				windows = {
+					preview = true,
+				},
+			})
 		end,
 	},
 	{

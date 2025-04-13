@@ -28,12 +28,14 @@ return {
 			"texlab", -- laTex lsp
 			"basedpyright", -- python-lsp
 			"lua-language-server", -- lua-lsp
+			"bash-language-server", -- bash-lsp
 		}
 		local linter_list = {
 			"ruff", -- python linter
 			"cmakelint", -- cmake linter
 			"luacheck", -- lua linter
 			"jsonlint", -- json linter
+			"shellcheck", -- shell linter
 		}
 		local formatter_list = {
 			"clang-format", -- c/c++ formatter
@@ -44,6 +46,7 @@ return {
 			"cmakelang", -- cmake formatter
 			"fixjson", -- json formatter
 			"mdformat", -- markdown formatter
+			"beautysh", -- sh formatter
 		}
 		local mr = require("mason-registry")
 

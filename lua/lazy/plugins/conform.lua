@@ -11,6 +11,7 @@ return {
 				markdown = { "mdformat" },
 				json = { "fixjson" },
 				python = { "autoflake", "ruff", "isort", "black" },
+				sh = { "beautysh" },
 			},
 			format_on_save = {
 				timeout_ms = 500,

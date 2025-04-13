@@ -52,3 +52,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- undotree keymap
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { desc = "[u]ndotree toggle" })
+-- mini.file keymap
+vim.keymap.set("n", "<Tab>", "<cmd>lua MiniFiles.open()<cr>", { desc = "Open Mini.File" })
