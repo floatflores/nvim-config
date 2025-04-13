@@ -31,7 +31,7 @@ return {
 			},
 			clangd = {
 				capabilities = { offsetEncoding = "utf-8" },
-				cmd = { "clangd" },
+				cmd = { "clangd", "--compile-commands-dir=build" },
 			},
 			basedpyright = {
 				settings = {

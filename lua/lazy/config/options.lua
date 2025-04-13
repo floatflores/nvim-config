@@ -10,8 +10,8 @@ opt.showcmd = true
 opt.cursorline = true
 opt.showmode = false
 
-opt.tabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.shiftwidth = 4
 
 opt.breakindent = true
 opt.undofile = true
