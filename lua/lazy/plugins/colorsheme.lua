@@ -4,7 +4,7 @@ return {
 		enabled = false,
 		priority = 1000,
 		config = function()
-			vim.cmd("colorsheme tokyonight-moon")
+			vim.cmd("colorscheme tokyonight-moon")
 		end,
 	},
 	{
