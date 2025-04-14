@@ -4,7 +4,7 @@ return {
 		{ "<C-t>", desc = "Toggle terminal" },
 	},
 	config = function()
-		require("toggleterm").setup({ open_mapping = [[<C-t>]], direction = "float" })
+		require("toggleterm").setup({ open_mapping = [[<C-t>]], direction = "vertical", size = 40 })
 		function _G.set_terminal_keymaps()
 			local opts = { buffer = 0 }
 			vim.keymap.set("n", "<Esc>", [[<Cmd>quit<CR>]], opts)
