@@ -7,7 +7,6 @@ return {
 			local alpha = require("alpha")
 			local dashboard = require("alpha.themes.dashboard")
 
-			-- 你提供的 ASCII 艺术
 			dashboard.section.header.val = {
 				[[⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣟⡿⣟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
 				[[⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣻⣿⣿⣿⣿⣿⣿⣿⢿⣿⡾⡶⣤⣬⣟⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
@@ -35,10 +34,8 @@ return {
 			dashboard.section.buttons.val = {}
 			dashboard.section.footer.val = "好久不见，想我了吗～"
 
-			-- 应用配置
 			alpha.setup(dashboard.config)
 
-			-- 专用高亮组 (适配你的 ASCII 艺术)
 			vim.api.nvim_create_autocmd("ColorScheme", {
 				callback = function()
 					vim.cmd([[
