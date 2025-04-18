@@ -54,3 +54,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { desc = "[u]ndotree toggle" })
 -- mini.file keymap
 vim.keymap.set("n", "<Tab>", "<cmd>lua MiniFiles.open()<cr>", { desc = "Open Mini.File" })
+-- keymap for better scroll
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true })
