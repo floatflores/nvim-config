@@ -43,9 +43,10 @@ return {
 			"isort", -- python formatter
 			"yapf", -- python formatter
 			"cmakelang", -- cmake formatter
-			"fixjson", -- json formatter
-			"mdformat", -- markdown formatter
-			"beautysh", -- sh formatter
+			"prettierd", -- markdown
+			"cbfmt", -- markdown
+			"taplo", -- toml
+			"shfmt", -- sh formatter
 		}
 		local mr = require("mason-registry")
 
