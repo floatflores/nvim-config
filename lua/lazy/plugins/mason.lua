@@ -41,8 +41,7 @@ return {
 			"clang-format", -- c/c++ formatter
 			"stylua", -- lua formatter
 			"isort", -- python formatter
-			"black",
-			"autoflake", -- python formatter
+			"yapf", -- python formatter
 			"cmakelang", -- cmake formatter
 			"fixjson", -- json formatter
 			"mdformat", -- markdown formatter
