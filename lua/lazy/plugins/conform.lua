@@ -15,7 +15,7 @@ return {
 				sh = { "shfmt" },
 			},
 			format_on_save = {
-				timeout_ms = 2000,
+				timeout_ms = 5000,
 				lsp_fallback = "fallback",
 			},
 			formatters = {
@@ -27,7 +27,7 @@ return {
 			-- formatters =
 			vim.keymap.set({ "n", "v" }, "<leader>mp", function()
 				require("conform").format({
-					timeout_ms = 2000,
+					timeout_ms = 5000,
 					lsp_fallback = "fallback",
 				})
 			end, { desc = "Trigger to format current file" }),

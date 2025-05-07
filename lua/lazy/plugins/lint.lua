@@ -14,7 +14,7 @@ return {
 		vim.api.nvim_create_autocmd({ "BufWritePost", "TextChanged" }, {
 			group = lint_augroup,
 			callback = function()
-				vim.defer_fn(lint.try_lint, 2000)
+				vim.defer_fn(lint.try_lint, 5000)
 			end,
 		})
 		vim.keymap.set("n", "<leader>ml", function()
