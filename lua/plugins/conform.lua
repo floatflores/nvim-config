@@ -7,7 +7,7 @@ return {
 				c = { "clang-format" },
 				cpp = { "clang-format" },
 				lua = { "stylua" },
-				python = { "isort", "yapf", "ruff" },
+				python = { "isort", "yapf" },
 				sh = { "shfmt" },
 			},
 			format_on_save = {

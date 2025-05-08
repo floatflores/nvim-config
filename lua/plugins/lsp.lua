@@ -22,6 +22,16 @@ return {
 				"prettierd",
 				"shfmt",
 			},
+			ui = {
+				border = "single",
+				width = 0.7,
+				height = 0.7,
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
+				},
+			},
 		},
 		config = function(_, opts)
 			require("mason").setup(opts)
@@ -107,8 +117,7 @@ return {
 				["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" }),
 				["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" }),
 			}
-			-- local capabilities = vim.lsp.protocol.make_client_capabilities()
-			local capabilities = require("blink.cmp").get_lsp_capabilities()
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
 			local function setup_server(server_name, config)
 				config.capabilities = vim.tbl_deep_extend("force", {}, capabilities, config.capabilities or {})
