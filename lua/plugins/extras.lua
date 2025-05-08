@@ -20,6 +20,13 @@ return {
 			},
 		},
 	},
+	{ "Bilal2453/luvit-meta", lazy = true },
+	{
+		"HiPhish/rainbow-delimiters.nvim",
+		main = "rainbow-delimiters.setup",
+		submodules = false,
+		opts = {},
+	},
 	-- manual saved session
 	{
 		"olimorris/persisted.nvim",

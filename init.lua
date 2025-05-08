@@ -1,2 +1,3 @@
-require("lazy/config/options")
-require("lazy/config/lazy")
+require("config.lazy")
+require("config.keymap")
+require("config.option")

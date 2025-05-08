@@ -38,6 +38,10 @@ return {
 					preview = true,
 				},
 			})
+
+			require("mini.statusline").setup()
+			require("mini.diff").setup()
+			require("mini.git").setup()
 		end,
 	},
 	{

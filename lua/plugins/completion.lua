@@ -1,8 +1,27 @@
 return {
 	"saghen/blink.cmp",
-	event = "VeryLazy",
-	dependencies = "rafamadriz/friendly-snippets",
-	version = "*",
+	event = { "BufReadPost", "BufNewFile" },
+	version = "1.*",
+	dependencies = {
+		"xzbdmw/colorful-menu.nvim",
+		config = function()
+			require("colorful-menu").setup({
+				ls = {
+					lua_ls = { arguments_hl = "@comment" },
+					clangd = {
+						extra_info_hl = "@comment",
+					},
+					basedpyright = {
+						extra_info_hl = "@comment",
+					},
+					fallback = true,
+				},
+				fallback_highlight = "@variable",
+				max_width = 60,
+			})
+		end,
+		{ "rafamadriz/friendly-snippets" },
+	},
 	opts = {
 		keymap = {
 			preset = "none",
@@ -18,7 +37,25 @@ return {
 		completion = {
 			keyword = { range = "full" },
 			list = { selection = { preselect = false, auto_insert = true } },
+			menu = {
+				border = "single",
+				draw = {
+					columns = { { "kind_icon" }, { "label", gap = 1 } },
+					components = {
+						label = {
+							text = function(ctx)
+								return require("colorful-menu").blink_components_text(ctx)
+							end,
+							highlight = function(ctx)
+								return require("colorful-menu").blink_components_highlight(ctx)
+							end,
+						},
+					},
+				},
+			},
+
 			documentation = {
+				window = { border = "single" },
 				auto_show = true,
 				auto_show_delay_ms = 500,
 			},
@@ -28,7 +65,9 @@ return {
 			use_nvim_cmp_as_default = true,
 			nerd_font_variant = "mono",
 		},
-
+		signature = {
+			window = { border = "single" },
+		},
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer", "dadbod", "lazydev" },
 			per_filetype = { sql = { "dadbod" } },
@@ -45,17 +84,11 @@ return {
 				lazydev = {
 					name = "LazyDev",
 					module = "lazydev.integrations.blink",
-					-- make lazydev completions top priority (see `:h blink.cmp`)
 					score_offset = 100,
 				},
 			},
 		},
 
-		-- Blink.cmp uses a Rust fuzzy matcher by default for typo resistance and significantly better performance
-		-- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
-		-- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
-		--
-		-- See the fuzzy documentation for more information
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
 	opts_extend = { "sources.default" },

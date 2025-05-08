@@ -7,11 +7,7 @@ return {
 				c = { "clang-format" },
 				cpp = { "clang-format" },
 				lua = { "stylua" },
-				cmake = { "cmakelang" },
-				markdown = { "prettierd", "cbfmt" },
-				json = { "prettierd" },
-				python = { "isort", "yapf" },
-				toml = { "taplo" },
+				python = { "isort", "yapf", "ruff" },
 				sh = { "shfmt" },
 			},
 			format_on_save = {
