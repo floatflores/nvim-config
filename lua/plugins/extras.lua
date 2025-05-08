@@ -52,4 +52,5 @@ return {
 	{
 		"LunarVim/bigfile.nvim",
 	},
+	{ "maan2003/lsp_lines.nvim", event = "VeryLazy" },
 }
