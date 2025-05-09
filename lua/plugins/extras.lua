@@ -48,9 +48,5 @@ return {
 	{
 		"mbbill/undotree",
 	},
-	-- optimus perfomance when trying to open a big file
-	{
-		"LunarVim/bigfile.nvim",
-	},
 	{ "maan2003/lsp_lines.nvim", event = "VeryLazy" },
 }
