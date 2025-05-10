@@ -39,14 +39,13 @@ return {
 				},
 			})
 
-			require("mini.statusline").setup()
+			-- require("mini.statusline").setup()
 			require("mini.diff").setup()
-			require("mini.git").setup()
+			-- require("mini.git").setup()
 		end,
 	},
 	{
 		"echasnovski/mini.icons",
-		event = "VeryLazy",
 		opts = {},
 		init = function()
 			package.preload["nvim-web-devicons"] = function()

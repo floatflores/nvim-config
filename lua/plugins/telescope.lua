@@ -1,6 +1,7 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	lazy = true,
+	enabled = false,
 	cmd = "Telescope",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
