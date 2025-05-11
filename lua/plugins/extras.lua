@@ -49,4 +49,5 @@ return {
 		"mbbill/undotree",
 	},
 	{ "maan2003/lsp_lines.nvim", event = "VeryLazy" },
+	{ "nvim-lua/plenary.nvim" },
 }
