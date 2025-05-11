@@ -29,5 +29,7 @@ opt.signcolumn = "yes"
 opt.mouse = "a"
 opt.clipboard = "unnamedplus"
 
+-- Let jumplist to be stacked
+opt.jumpoptions = "stack"
 -- vim.opt.list = true
 -- vim.opt.listchars = { tab = ">-", trail = "-" }
