@@ -1,6 +1,6 @@
 return {
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason.nvim",
 		event = "VeryLazy",
 		opts = {
 			ensure_installed = {
@@ -49,7 +49,7 @@ return {
 		"neovim/nvim-lspconfig",
 		ft = { "lua", "python", "c", "cpp", "md", "json" },
 		dependencies = {
-			{ "williamboman/mason-lspconfig.nvim", config = true },
+			{ "mason-org/mason-lspconfig.nvim", config = true },
 		},
 		config = function()
 			local servers = {
