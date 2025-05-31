@@ -10,17 +10,10 @@ return {
 				python = { "isort", "yapf" },
 				sh = { "shfmt" },
 			},
-			format_on_save = {
-				timeout_ms = 5000,
-				lsp_fallback = "fallback",
-			},
-			formatters = {
-				my_formatter = {
-					cmd = "clang-format",
-					args = { "--style=file:~/.local/configuration/.clang-format" },
-				},
-			},
-			-- formatters =
+			-- format_on_save = {
+			-- 	timeout_ms = 5000,
+			-- 	lsp_fallback = "fallback",
+			-- },
 			vim.keymap.set({ "n", "v" }, "<leader>mp", function()
 				require("conform").format({
 					timeout_ms = 5000,

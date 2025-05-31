@@ -9,5 +9,6 @@ end, { desc = "Toggle Lsp Lines" })
 vim.keymap.set("n", "<ESC>", "<CMD>nohlsearch<CR>")
 
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Lsp Rename" })
+vim.keymap.set("n", "<leader>qf", vim.lsp.buf.format, { desc = "Lsp Format" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Lsp Code Action" })
 vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open Diagnostic Window" })

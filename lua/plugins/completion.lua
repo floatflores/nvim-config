@@ -2,23 +2,25 @@ return {
 	"saghen/blink.cmp",
 	version = "1.*",
 	dependencies = {
-		"xzbdmw/colorful-menu.nvim",
-		config = function()
-			require("colorful-menu").setup({
-				ls = {
-					lua_ls = { arguments_hl = "@comment" },
-					clangd = {
-						extra_info_hl = "@comment",
+		{
+			"xzbdmw/colorful-menu.nvim",
+			config = function()
+				require("colorful-menu").setup({
+					ls = {
+						lua_ls = { arguments_hl = "@comment" },
+						clangd = {
+							extra_info_hl = "@comment",
+						},
+						basedpyright = {
+							extra_info_hl = "@comment",
+						},
+						fallback = true,
 					},
-					basedpyright = {
-						extra_info_hl = "@comment",
-					},
-					fallback = true,
-				},
-				fallback_highlight = "@variable",
-				max_width = 60,
-			})
-		end,
+					fallback_highlight = "@variable",
+					max_width = 60,
+				})
+			end,
+		},
 		{ "rafamadriz/friendly-snippets" },
 	},
 	opts = {
@@ -69,7 +71,7 @@ return {
 		},
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer", "dadbod", "lazydev" },
-			per_filetype = { sql = { "dadbod" } },
+			per_filetype = { sql = { "Dadbod" } },
 			providers = {
 				buffer = { score_offset = 40 },
 				lsp = { score_offset = 90 },
