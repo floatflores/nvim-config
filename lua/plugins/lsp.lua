@@ -11,6 +11,7 @@ return {
 				"basedpyright",
 				"bash-language-server",
 				"marksman",
+				"jdtls",
 				-- linter
 				"ruff",
 				"cmakelint",
@@ -47,28 +48,9 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		ft = { "lua", "python", "c", "cpp", "md", "json" },
+		ft = { "lua", "python", "c", "cpp", "md", "json", "java" },
 		dependencies = {
 			{ "mason-org/mason-lspconfig.nvim", config = true },
 		},
-		config = function()
-			local servers = {
-				texlab = {
-					settings = {
-						texlab = {
-							diagnostics = {
-								ignoredPatterns = {
-									"Overfull",
-									"Underfull",
-									"Package hyperref Warning",
-									"Float too large for page",
-									"contains only floats",
-								},
-							},
-						},
-					},
-				},
-			}
-		end,
 	},
 }

@@ -1,6 +1,5 @@
 return {
 	"saghen/blink.cmp",
-	event = "VeryLazy",
 	version = "1.*",
 	dependencies = {
 		"xzbdmw/colorful-menu.nvim",
@@ -31,7 +30,7 @@ return {
 			["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
 			["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
 			["<C-f>"] = { "scroll_documentation_up", "fallback" },
-			["<C-b>"] = { "scroll_documentation_up", "fallback" },
+			["<C-b>"] = { "scroll_documentation_down", "fallback" },
 			["<CR>"] = { "accept", "fallback" },
 		},
 		completion = {
@@ -72,10 +71,10 @@ return {
 			default = { "lsp", "path", "snippets", "buffer", "dadbod", "lazydev" },
 			per_filetype = { sql = { "dadbod" } },
 			providers = {
-				buffer = { score_offset = 4 },
-				lsp = { score_offset = 3 },
-				path = { score_offset = 2 },
-				snippets = { score_offset = 1 },
+				buffer = { score_offset = 40 },
+				lsp = { score_offset = 90 },
+				path = { score_offset = 20 },
+				snippets = { score_offset = 80 },
 				dadbod = {
 					name = "Dadbod",
 					module = "vim_dadbod_completion.blink",

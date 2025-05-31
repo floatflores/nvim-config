@@ -11,6 +11,13 @@ return {
 			animate = {
 				enabled = false,
 			},
+			scope = {
+				enabled = true,
+				underline = true,
+			},
+			chunk = {
+				enabled = true,
+			},
 		},
 		input = { enabled = true },
 		terminal = {
@@ -69,6 +76,7 @@ return {
 		notifier = { enabled = true, style = "notification" },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
+		image = {},
 		scroll = { enabled = true },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
@@ -99,14 +107,7 @@ return {
 			function()
 				require("snacks").picker.smart()
 			end,
-			desc = "[Snacks] smart",
-		},
-		{
-			"<leader>ff",
-			function()
-				require("snacks").picker.files()
-			end,
-			desc = "[Snacks] find file",
+			desc = "[Snacks] Smart File Finder",
 		},
 		{
 			"<leader>rf",
@@ -120,7 +121,22 @@ return {
 			function()
 				require("snacks").picker.grep()
 			end,
-			desc = "[Snacks] Find String",
+			desc = "[Snacks] Find String From Dir",
+		},
+		{
+			"<leader>f.",
+			function()
+				Snacks.picker.grep_buffers()
+			end,
+			desc = "[Snacks] Grep Open Buffers",
+		},
+		{
+			"<leader>sw",
+			function()
+				Snacks.picker.grep_word()
+			end,
+			desc = "[Snacks] Visual selection or word",
+			mode = { "n", "x" },
 		},
 		{
 			"<leader>sk",
@@ -148,7 +164,28 @@ return {
 			function()
 				require("snacks").picker.buffers()
 			end,
-			desc = "[Snacks] Buffers",
+			desc = "[Snacks] Buffers Picker",
+		},
+		{
+			"<leader>un",
+			function()
+				require("snacks").notifier.hide()
+			end,
+			desc = "[Snack] Hide Notification",
+		},
+		{
+			"<leader>sp",
+			function()
+				require("snacks").picker.projects()
+			end,
+			desc = "[Snacks] Projects",
+		},
+		{
+			"<leader>e",
+			function()
+				require("snacks").explorer()
+			end,
+			desc = "[Snacks] Explorer",
 		},
 		{
 			"<leader>sn",

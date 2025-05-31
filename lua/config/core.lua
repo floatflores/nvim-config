@@ -1,4 +1,4 @@
-vim.lsp.enable({ "clangd", "lua_ls", "basedpyright", "ruff", "marksman" })
+vim.lsp.enable({ "clangd", "lua_ls", "basedpyright", "ruff", "marksman", "jdtls" })
 
 -- Highlight with yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
