@@ -1,7 +1,7 @@
 return {
 	"linux-cultist/venv-selector.nvim",
 	event = "BufEnter *.py",
-	dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim" },
+	dependencies = {  "nvim-telescope/telescope.nvim" },
 	main = "venv-selector",
 	opts = {
 		-- Your options go here

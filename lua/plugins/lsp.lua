@@ -46,11 +46,4 @@ return {
 			end
 		end,
 	},
-	{
-		"neovim/nvim-lspconfig",
-		ft = { "lua", "python", "c", "cpp", "md", "json", "java" },
-		dependencies = {
-			{ "mason-org/mason-lspconfig.nvim", config = true },
-		},
-	},
 }
