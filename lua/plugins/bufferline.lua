@@ -3,7 +3,6 @@ return {
 	event = "VeryLazy",
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
-		-- "famiu/bufdelete.nvim",
 	},
 	keys = {
 		{ "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
@@ -13,15 +12,11 @@ return {
 		{ "<leader>bcr", "<cmd>BufferLineCloseRight<cr>", desc = "[B]uffer [C]lose [R]ight" },
 		{ "<leader>bco", "<cmd>BufferLineCloseOthers<cr>", desc = "[B]uffer [C]lose [O]thers" },
 		{ "<leader>bcP", "<cmd>BufferLineClose ungrouped<cr>", desc = "[B]uffer [C]lose un[P]inned" },
-		{ "gb0", "<cmd>BufferLineGoToBuffer -1<cr>", desc = "[G]oto [B]uffer [0]" },
 	},
 	config = function()
 		local bufferline = require("bufferline")
 		bufferline.setup({
 			options = {
-				-- close_command = function(bufnum)
-				-- 	require("bufdelete").bufdelete(bufnum, true)
-				-- end,
 				diagnostics = "nvim_lsp",
 				style_preset = {
 					bufferline.style_preset.no_italic,

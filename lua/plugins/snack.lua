@@ -117,14 +117,14 @@ return {
 			desc = "[Snacks] Recent File",
 		},
 		{
-			"<leader>fs",
+			"<leader>gs",
 			function()
 				require("snacks").picker.grep()
 			end,
 			desc = "[Snacks] Find String From Dir",
 		},
 		{
-			"<leader>f.",
+			"<leader>g.",
 			function()
 				Snacks.picker.grep_buffers()
 			end,
