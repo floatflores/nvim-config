@@ -15,16 +15,40 @@ return {
 		},
 	},
 	keys = {
-      -- stylua: ignore
-      { "<leader>f", mode = { "n", "x", "o" }, function() require("flash").jump() end,                                                                                               desc = "[Flash] Jump"              },
-      -- stylua: ignore
-      { "<leader>F", mode = { "n", "x", "o" }, function() require("flash").treesitter() end,                                                                                         desc = "[Flash] Treesitter"        },
-      -- stylua: ignore
-      { "<leader>F", mode = { "o", "x" },      function() require("flash").treesitter_search() end,                                                                                  desc = "[Flash] Treesitter Search" },
-      -- stylua: ignore
-      { "<c-f>",     mode = { "c" },           function() require("flash").toggle() end,                                                                                             desc = "[Flash] Toggle Search"     },
 		{
-			"<leader>j",
+			"<leader>f",
+			mode = { "n", "x", "o" },
+			function()
+				require("flash").jump()
+			end,
+			desc = "[Flash] Jump",
+		},
+		{
+			"<leader>F",
+			mode = { "n", "x", "o" },
+			function()
+				require("flash").treesitter()
+			end,
+			desc = "[Flash] Treesitter",
+		},
+		{
+			"<leader>F",
+			mode = { "o", "x" },
+			function()
+				require("flash").treesitter_search()
+			end,
+			desc = "[Flash] Treesitter Search",
+		},
+		{
+			"<leader>js",
+			mode = { "c", "n" },
+			function()
+				require("flash").toggle()
+			end,
+			desc = "[Flash] Toggle Search",
+		},
+		{
+			"<leader>jl",
 			mode = { "n", "x", "o" },
 			function()
 				require("flash").jump({
