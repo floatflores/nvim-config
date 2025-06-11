@@ -2,29 +2,21 @@ return {
 	{
 		"mason-org/mason.nvim",
 		event = "VeryLazy",
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"mason-org/mason-lspconfig.nvim",
+		},
 		opts = {
+			-- lsp
 			ensure_installed = {
-				-- lsp
 				"lua-language-server",
 				"clangd",
 				"texlab",
-				"basedpyright",
+				-- "basedpyright",
+				"python-lsp-server",
 				"bash-language-server",
 				"marksman",
 				"jdtls",
-				-- linter
-				"ruff",
-				"cmakelint",
-				"luacheck",
-				"shellcheck",
-				-- formater
-				"clang-format",
-				"stylua",
-				"yapf",
-                "isort",
-				"cmakelang",
-				"prettierd",
-				"shfmt",
 			},
 			ui = {
 				border = "single",
@@ -41,8 +33,9 @@ return {
 			require("mason").setup(opts)
 			local mr = require("mason-registry")
 			for _, tool in ipairs(opts.ensure_installed) do
-				if not mr.is_installed(tool) then
-					vim.cmd("MasonInstall " .. tool)
+				local success, package = pcall(mr.get_package, tool)
+				if success and not package:is_installed() then
+					vim.cmd("MasonInstall " .. package.name)
 				end
 			end
 		end,

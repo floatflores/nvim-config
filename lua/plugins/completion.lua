@@ -1,6 +1,7 @@
 return {
 	"saghen/blink.cmp",
-	version = "1.*",
+    event = "VeryLazy",
+	version = "*",
 	dependencies = {
 		{
 			"xzbdmw/colorful-menu.nvim",
@@ -75,8 +76,8 @@ return {
 			providers = {
 				buffer = { score_offset = 40 },
 				lsp = { score_offset = 90 },
-				path = { score_offset = 20 },
-				snippets = { score_offset = 80 },
+				path = { score_offset = 70 },
+				snippets = { score_offset = 60 },
 				dadbod = {
 					name = "Dadbod",
 					module = "vim_dadbod_completion.blink",
@@ -88,6 +89,18 @@ return {
 					score_offset = 100,
 				},
 			},
+		},
+		cmdline = {
+			sources = function()
+				local cmd_type = vim.fn.getcmdtype()
+				if cmd_type == "/" then
+					return { "buffer" }
+				end
+				if cmd_type == ":" then
+					return { "cmdline" }
+				end
+				return {}
+			end,
 		},
 
 		fuzzy = { implementation = "prefer_rust_with_warning" },

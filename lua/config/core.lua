@@ -1,4 +1,12 @@
-vim.lsp.enable({ "clangd", "lua_ls", "basedpyright", "ruff", "marksman", "jdtls" })
+vim.lsp.enable({
+	"clangd",
+	"lua_ls",
+	-- "basedpyright",
+	"pylsp",
+	"ruff",
+	"marksman",
+	"jdtls",
+})
 
 -- Highlight with yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -12,6 +20,7 @@ vim.diagnostic.config({
 	virtual_text = {
 		current_line = true,
 	},
+	update_in_insert = true,
 	float = {
 		severity_sort = true,
 		source = "if_many",

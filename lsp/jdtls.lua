@@ -109,4 +109,5 @@ return {
 		["workspace/applyEdit"] = on_workspace_applyedit,
 		["language/status"] = vim.schedule_wrap(on_language_status),
 	},
+	capabilities = require("blink.cmp").get_lsp_capabilities(),
 }

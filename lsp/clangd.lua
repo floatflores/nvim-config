@@ -56,14 +56,15 @@ return {
 		"configure.ac", -- AutoTools
 		".git",
 	},
-	capabilities = {
-		textDocument = {
-			completion = {
-				editsNearCursor = true,
-			},
-		},
-		offsetEncoding = { "utf-8", "utf-16" },
-	},
+	-- capabilities = {
+	-- 	textDocument = {
+	-- 		completion = {
+	-- 			editsNearCursor = true,
+	-- 		},
+	-- 	},
+	-- 	offsetEncoding = { "utf-8", "utf-16" },
+	-- },
+	capabilities = require("blink.cmp").get_lsp_capabilities(),
 	on_attach = function()
 		vim.api.nvim_buf_create_user_command(0, "LspClangdSwitchSourceHeader", function()
 			switch_source_header(0)

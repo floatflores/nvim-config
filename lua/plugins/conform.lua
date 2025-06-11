@@ -2,6 +2,25 @@ return {
 	"stevearc/conform.nvim",
 	event = "VeryLazy",
 	config = function()
+		local formatters = {
+			-- formatter
+			"clang-format",
+			"stylua",
+			"yapf",
+			"isort",
+			"cmakelang",
+			"prettierd",
+			"shfmt",
+			"codespell",
+		}
+		local mr = require("mason-registry")
+		for _, tool in ipairs(formatters) do
+			local success, package = pcall(mr.get_package, tool)
+			if success and not package:is_installed() then
+				vim.cmd("MasonInstall " .. package.name)
+			end
+		end
+
 		require("conform").setup({
 			formatters_by_ft = {
 				c = { "clang-format" },
@@ -9,7 +28,11 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "yapf" },
 				sh = { "shfmt" },
+				cmake = { "cmakelang" },
+				["*"] = { "codespell" },
+				["_"] = { "prettierd" },
 			},
+			-- Autoformat after save
 			-- format_on_save = {
 			-- 	timeout_ms = 5000,
 			-- 	lsp_fallback = "fallback",
