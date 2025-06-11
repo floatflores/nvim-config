@@ -28,25 +28,25 @@ return {
 		},
 		config = function(_, opts)
 			require("catppuccin").setup(opts)
-
 			vim.cmd.colorscheme("catppuccin-mocha")
 		end,
 	},
 	{
 		"folke/tokyonight.nvim",
-		enabled = false,
-		priority = 1000,
-		config = function()
-			vim.cmd("colorscheme tokyonight-moon")
-		end,
+		-- enabled = false,
+		-- priority = 1000,
+		-- config = function()
+		-- 	vim.cmd("colorscheme tokyonight-moon")
+		-- end,
 	},
 	{
 		"sainnhe/everforest",
-		enabled = false,
-		priority = 1000,
-		config = function()
-			vim.g.everforest_background = "hard"
-			vim.cmd("colorscheme everforest")
-		end,
+		-- enabled = false,
+		-- priority = 1000,
+		-- config = function()
+		-- 	vim.g.everforest_background = "hard"
+		-- 	vim.cmd("colorscheme everforest")
+		-- end,
 	},
+	{ "ellisonleao/gruvbox.nvim" },
 }
