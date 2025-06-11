@@ -21,7 +21,7 @@ return {
 				"clang-format",
 				"stylua",
 				"yapf",
-                "isort",
+				"isort",
 				"cmakelang",
 				"prettierd",
 				"shfmt",
@@ -46,5 +46,12 @@ return {
 				end
 			end
 		end,
+	},
+	{
+		"neovim/nvim-lspconfig",
+		ft = { "lua", "python", "c", "cpp", "md", "json", "java" },
+		dependencies = {
+			{ "mason-org/mason-lspconfig.nvim", config = true },
+		},
 	},
 }
