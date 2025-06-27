@@ -7,10 +7,10 @@ return {
 			ensure_installed = {
 				"lua-language-server",
 				"clangd",
-				"texlab",
 				-- "basedpyright",
 				"python-lsp-server",
 				"bash-language-server",
+				"cmake-language-server",
 				"marksman",
 				"jdtls",
 			},
@@ -38,7 +38,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		ft = { "lua", "c", "cpp", "python", "java" },
+		ft = { "lua", "c", "cpp", "python", "java", "markdown", "cmake" },
 		dependencies = { { "mason-org/mason-lspconfig.nvim", config = true } },
 	},
 }

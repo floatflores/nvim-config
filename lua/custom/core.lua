@@ -4,8 +4,9 @@ vim.lsp.enable({
 	-- "basedpyright",
 	"pylsp",
 	"ruff",
-	"marksman",
 	"jdtls",
+	"markdown-oxide",
+	"cmake",
 })
 
 -- Highlight with yanking (copying) text

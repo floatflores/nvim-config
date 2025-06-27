@@ -33,6 +33,7 @@ return {
 	},
 	{
 		"folke/tokyonight.nvim",
+		event = "VeryLazy",
 		-- enabled = false,
 		-- priority = 1000,
 		-- config = function()
@@ -41,6 +42,7 @@ return {
 	},
 	{
 		"sainnhe/everforest",
+		event = "VeryLazy",
 		-- enabled = false,
 		-- priority = 1000,
 		-- config = function()
@@ -48,5 +50,5 @@ return {
 		-- 	vim.cmd("colorscheme everforest")
 		-- end,
 	},
-	{ "ellisonleao/gruvbox.nvim" },
+	{ "ellisonleao/gruvbox.nvim", event = "VeryLazy" },
 }

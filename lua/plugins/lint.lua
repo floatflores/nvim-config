@@ -8,6 +8,7 @@ return {
 			"cmakelint",
 			"luacheck",
 			"shellcheck",
+			"markdownlint",
 		}
 		local mr = require("mason-registry")
 		for _, tool in ipairs(linters) do
@@ -22,6 +23,8 @@ return {
 			python = { "ruff" },
 			lua = { "luacheck" },
 			sh = { "shellcheck" },
+			cmake = { "cmakelint" },
+			markdown = { "markdownlint" },
 		}
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 		vim.api.nvim_create_autocmd({ "BufWritePost", "TextChanged" }, {

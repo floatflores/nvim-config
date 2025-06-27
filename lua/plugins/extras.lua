@@ -23,7 +23,7 @@ return {
 	{ "Bilal2453/luvit-meta", lazy = true },
 	{
 		"HiPhish/rainbow-delimiters.nvim",
-        event = "VeryLazy",
+		event = "VeryLazy",
 		main = "rainbow-delimiters.setup",
 		submodules = false,
 		opts = {},
@@ -51,4 +51,5 @@ return {
 	},
 	{ "maan2003/lsp_lines.nvim", event = "VeryLazy" },
 	{ "nvim-lua/plenary.nvim" },
+	{ "windwp/nvim-ts-autotag", config = true },
 }

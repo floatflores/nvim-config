@@ -8,10 +8,10 @@ return {
 			"stylua",
 			"yapf",
 			"isort",
-			"cmakelang",
 			"prettierd",
 			"shfmt",
 			"codespell",
+			"xmlformatter",
 		}
 		local mr = require("mason-registry")
 		for _, tool in ipairs(formatters) do
@@ -28,7 +28,7 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "yapf" },
 				sh = { "shfmt" },
-				cmake = { "cmakelang" },
+				xml = { "xmlformatter" },
 				["*"] = { "codespell" },
 				["_"] = { "prettierd" },
 			},
