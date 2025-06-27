@@ -2,10 +2,6 @@ return {
 	{
 		"mason-org/mason.nvim",
 		event = "VeryLazy",
-		dependencies = {
-			"neovim/nvim-lspconfig",
-			"mason-org/mason-lspconfig.nvim",
-		},
 		opts = {
 			-- lsp
 			ensure_installed = {
@@ -39,5 +35,10 @@ return {
 				end
 			end
 		end,
+	},
+	{
+		"neovim/nvim-lspconfig",
+		ft = { "lua", "c", "cpp", "python", "java" },
+		dependencies = { { "mason-org/mason-lspconfig.nvim", config = true } },
 	},
 }

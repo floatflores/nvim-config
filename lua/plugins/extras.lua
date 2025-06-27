@@ -23,6 +23,7 @@ return {
 	{ "Bilal2453/luvit-meta", lazy = true },
 	{
 		"HiPhish/rainbow-delimiters.nvim",
+        event = "VeryLazy",
 		main = "rainbow-delimiters.setup",
 		submodules = false,
 		opts = {},
