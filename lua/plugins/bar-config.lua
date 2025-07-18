@@ -1,6 +1,7 @@
 return {
 	{
 		"Bekaboo/dropbar.nvim",
+		enabled = false,
 		event = "VeryLazy",
 		-- optional, but required for fuzzy finder support
 		dependencies = {

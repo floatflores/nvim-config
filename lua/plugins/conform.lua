@@ -29,7 +29,6 @@ return {
 				python = { "isort", "yapf" },
 				sh = { "shfmt" },
 				xml = { "xmlformatter" },
-				["*"] = { "codespell" },
 				["_"] = { "prettierd" },
 			},
 			-- Autoformat after save
