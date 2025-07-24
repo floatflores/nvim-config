@@ -1,6 +1,6 @@
 return {
 	"saghen/blink.cmp",
-    event = "VeryLazy",
+	event = "VeryLazy",
 	version = "*",
 	dependencies = {
 		{
@@ -23,6 +23,20 @@ return {
 			end,
 		},
 		{ "rafamadriz/friendly-snippets" },
+		{
+			"danymat/neogen",
+			cmd = "Neogen",
+			keys = {
+				{
+					"<leader>cn",
+					function()
+						require("neogen").generate()
+					end,
+					desc = "Generate Annotations (Neogen)",
+				},
+			},
+			opts = { snippet_engine = "luasnip" },
+		},
 	},
 	opts = {
 		keymap = {
