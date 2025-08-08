@@ -12,6 +12,7 @@ return {
 			"shfmt",
 			"codespell",
 			"xmlformatter",
+			"tex-fmt",
 		}
 		local mr = require("mason-registry")
 		for _, tool in ipairs(formatters) do
@@ -29,6 +30,7 @@ return {
 				python = { "isort", "yapf" },
 				sh = { "shfmt" },
 				xml = { "xmlformatter" },
+				tex = { "tex-fmt" },
 				["_"] = { "prettierd" },
 			},
 			-- Autoformat after save

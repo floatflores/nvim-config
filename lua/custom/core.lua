@@ -7,6 +7,8 @@ vim.lsp.enable({
 	"jdtls",
 	"markdown-oxide",
 	"cmake",
+	"texlab",
+	"glsl_analyzer",
 })
 
 -- Highlight with yanking (copying) text

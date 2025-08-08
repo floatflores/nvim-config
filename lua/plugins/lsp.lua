@@ -13,6 +13,8 @@ return {
 				"cmake-language-server",
 				"marksman",
 				"jdtls",
+				"texlab",
+				"glsl_analyzer",
 			},
 			ui = {
 				border = "single",
@@ -38,7 +40,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		ft = { "lua", "c", "cpp", "python", "java", "markdown", "cmake" },
+		ft = { "lua", "c", "cpp", "python", "java", "markdown", "cmake", "tex" },
 		dependencies = { { "mason-org/mason-lspconfig.nvim", config = true } },
 	},
 }
