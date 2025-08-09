@@ -40,7 +40,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		ft = { "lua", "c", "cpp", "python", "java", "markdown", "cmake", "tex" },
+		ft = { "lua", "c", "cpp", "python", "java", "markdown", "cmake", "tex", "rust", "vert", "frag" },
 		dependencies = { { "mason-org/mason-lspconfig.nvim", config = true } },
 	},
 }

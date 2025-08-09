@@ -25,6 +25,7 @@ return {
 			sh = { "shellcheck" },
 			cmake = { "cmakelint" },
 			markdown = { "markdownlint" },
+			-- rust = { "clippy" },
 		}
 		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 		vim.api.nvim_create_autocmd({ "BufWritePost", "TextChanged" }, {

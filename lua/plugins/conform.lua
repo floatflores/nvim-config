@@ -31,6 +31,7 @@ return {
 				sh = { "shfmt" },
 				xml = { "xmlformatter" },
 				tex = { "tex-fmt" },
+				rust = { "rustfmt" },
 				["_"] = { "prettierd" },
 			},
 			-- Autoformat after save
