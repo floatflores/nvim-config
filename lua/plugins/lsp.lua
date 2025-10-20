@@ -1,7 +1,7 @@
 return {
 	{
 		"mason-org/mason.nvim",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
 		opts = {
 			-- lsp
 			ensure_installed = {
@@ -40,6 +40,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		lazy = false,
 		ft = { "lua", "c", "cpp", "python", "java", "markdown", "cmake", "tex", "rust", "vert", "frag" },
 		dependencies = { { "mason-org/mason-lspconfig.nvim", config = true } },
 	},
