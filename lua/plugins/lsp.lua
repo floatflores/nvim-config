@@ -10,7 +10,7 @@ return {
 				-- "basedpyright",
 				"python-lsp-server",
 				"bash-language-server",
-				"cmake-language-server",
+				-- "cmake-language-server",
 				"marksman",
 				"jdtls",
 				"texlab",

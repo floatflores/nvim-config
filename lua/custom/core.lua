@@ -9,7 +9,7 @@ vim.lsp.enable({
 	"cmake",
 	"texlab",
 	"glsl_analyzer",
-    "rust_analyzer"
+	"rust_analyzer",
 })
 
 -- Highlight with yanking (copying) text

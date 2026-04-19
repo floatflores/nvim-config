@@ -87,6 +87,22 @@ return {
 	},
 	keys = {
 		{
+			"<leader>bo",
+			function()
+				require("snacks").bufdelete.other()
+			end,
+			desc = "[Snacks] Delete other buffers",
+			mode = { "n" },
+		},
+		{
+			"<leader>cb",
+			function()
+				require("snacks").bufdelete.delete()
+			end,
+			desc = "[Snacks] Delete current buffer",
+			mode = { "n" },
+		},
+		{
 			"<C-t>",
 			function()
 				require("snacks").terminal()

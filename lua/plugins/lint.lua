@@ -6,7 +6,7 @@ return {
 			-- linter
 			"ruff",
 			"cmakelint",
-			"luacheck",
+			-- "luacheck",
 			"shellcheck",
 			"markdownlint",
 		}
@@ -21,7 +21,7 @@ return {
 		local lint = require("lint")
 		lint.linters_by_ft = {
 			python = { "ruff" },
-			lua = { "luacheck" },
+			-- lua = { "luacheck" },
 			sh = { "shellcheck" },
 			cmake = { "cmakelint" },
 			markdown = { "markdownlint" },

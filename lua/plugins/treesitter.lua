@@ -18,6 +18,7 @@ return {
 				"html",
 				"java",
 				"sql",
+				"markdown",
 			},
 			sync_install = false,
 			highlight = { enable = true },

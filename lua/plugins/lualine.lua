@@ -9,14 +9,15 @@ return {
 				tabline = 500,
 				winbar = 500,
 			},
-			theme = "catppuccin",
+			-- theme = "catppuccin",
 			always_divide_middle = false,
 			component_separators = { left = "", right = "" },
 			section_separators = { left = "", right = "" },
 		},
 		sections = {
+			lualine_b = { "branch", "diff", "diagnostics", "lsp_status" },
 			lualine_c = { { "filename", path = 1 } },
-			lualine_x = { "encoding", "filetype" },
+			lualine_x = { "searchcount", "encoding", "filetype", "filesize" },
 		},
 	},
 }

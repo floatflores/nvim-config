@@ -91,7 +91,7 @@ return {
 				buffer = { score_offset = 40 },
 				lsp = { score_offset = 90 },
 				path = { score_offset = 70 },
-				snippets = { score_offset = 60 },
+				snippets = { score_offset = 75 },
 				dadbod = {
 					name = "Dadbod",
 					module = "vim_dadbod_completion.blink",

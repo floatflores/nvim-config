@@ -38,7 +38,7 @@ return {
 			vim.api.nvim_create_autocmd("ColorScheme", {
 				callback = function()
 					vim.cmd([[
-            hi AlphaHeader   guifg=#FF69B4 ctermfg=204
+            hi AlphaHeader  guifg=#FF69B4 ctermfg=204
             hi AlphaButton  guifg=#87CEEB ctermfg=117
             hi AlphaFooter  guifg=#98FB98 ctermfg=120
             hi AlphaButtons guibg=NONE    ctermbg=NONE
