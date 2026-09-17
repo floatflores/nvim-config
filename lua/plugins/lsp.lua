@@ -15,6 +15,7 @@ return {
 				"jdtls",
 				"texlab",
 				"glsl_analyzer",
+                "zls",
 			},
 			ui = {
 				border = "single",
