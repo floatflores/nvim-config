@@ -45,6 +45,10 @@ return {
 				"cmakelint",
 				"markdownlint",
 				"shellcheck",
+				-- Build tools
+				-- Neovim 0.12 generates ABI 15 parsers; use Mason's
+				-- tree-sitter-cli (0.27.x) instead of an old distro one.
+				"tree-sitter-cli",
 				-- Debug adapters
 				"codelldb",
 			},

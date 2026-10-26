@@ -21,7 +21,7 @@ return {
 			"java",
 			"javascript",
 			"json",
-			"latex",
+			"latex", -- needs tree-sitter-cli >= 0.26.1 for ABI 15
 			"lua",
 			"markdown",
 			"markdown_inline",
@@ -38,12 +38,16 @@ return {
 			"yaml",
 			"zig",
 		}
-		local alreadyInstalled = require("nvim-treesitter.config").get_installed()
+		-- Only look at actual parser binaries; `get_installed()` also counts
+		-- queries, which can make a half-finished install look complete.
+		local alreadyInstalled = require("nvim-treesitter.config").get_installed("parsers")
 		local parsersToInstall = vim.iter(ensureInstalled)
 			:filter(function(parser)
 				return not vim.tbl_contains(alreadyInstalled, parser)
 			end)
 			:totable()
-		require("nvim-treesitter").install(parsersToInstall)
+		if #parsersToInstall > 0 then
+			require("nvim-treesitter").install(parsersToInstall, { force = true })
+		end
 	end,
 }
