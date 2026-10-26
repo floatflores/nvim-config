@@ -22,13 +22,19 @@ local function get_jdtls_workspace_dir()
 	return get_jdtls_cache_dir() .. "/workspace"
 end
 
+-- One workspace per project, so different repos don't pollute each other
+-- (and jdtls doesn't warn about the previous workspace's unsaved state).
+local function get_project_workspace_dir(root_dir)
+	local root = root_dir or vim.fn.getcwd()
+	return get_jdtls_workspace_dir() .. "/" .. vim.fn.sha256(root):sub(1, 12)
+end
+
 local function get_jdtls_jvm_args()
 	local args = {}
 	for a in string.gmatch((env.JDTLS_JVM_ARGS or ""), "%S+") do
-		local arg = string.format("--jvm-arg=%s", a)
-		table.insert(args, arg)
+		table.insert(args, string.format("--jvm-arg=%s", a))
 	end
-	return unpack(args)
+	return args
 end
 
 -- TextDocument version is reported as 0, override with nil so that
@@ -76,14 +82,21 @@ local function on_language_status(_, result)
 end
 
 return {
-	cmd = {
-		"jdtls",
-		"-configuration",
-		get_jdtls_config_dir(),
-		"-data",
-		get_jdtls_workspace_dir(),
-		get_jdtls_jvm_args(),
-	},
+	cmd = function(dispatchers, config)
+		local cmd = {
+			"jdtls",
+			"-configuration",
+			get_jdtls_config_dir(),
+			"-data",
+			get_project_workspace_dir(config and config.root_dir),
+		}
+		vim.list_extend(cmd, get_jdtls_jvm_args())
+		return vim.lsp.rpc.start(cmd, dispatchers, {
+			cwd = config and config.cmd_cwd,
+			env = config and config.cmd_env,
+			detached = config and config.detached,
+		})
+	end,
 	filetypes = { "java" },
 	root_markers = {
 		-- Multi-module projects
@@ -97,7 +110,6 @@ return {
 		"settings.gradle.kts", -- Gradle
 	},
 	init_options = {
-		workspace = get_jdtls_workspace_dir(),
 		jvm_args = {},
 		os_config = nil,
 	},
@@ -109,5 +121,4 @@ return {
 		["workspace/applyEdit"] = on_workspace_applyedit,
 		["language/status"] = vim.schedule_wrap(on_language_status),
 	},
-	capabilities = require("blink.cmp").get_lsp_capabilities(),
 }

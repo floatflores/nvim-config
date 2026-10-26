@@ -2,11 +2,20 @@ return {
 	cmd = { "lua-language-server" },
 	settings = {
 		Lua = {
+			runtime = {
+				version = "LuaJIT",
+			},
 			completion = {
 				callSnippet = "Replace",
 			},
 			diagnostics = {
 				globals = { "vim" },
+			},
+			telemetry = {
+				enable = false,
+			},
+			workspace = {
+				checkThirdParty = false,
 			},
 		},
 	},

@@ -1,50 +1,39 @@
 return {
 	"stevearc/conform.nvim",
 	event = "VeryLazy",
-	config = function()
-		local formatters = {
-			-- formatter
-			"clang-format",
-			"stylua",
-			"yapf",
-			"isort",
-			"prettierd",
-			"shfmt",
-			"codespell",
-			"xmlformatter",
-			"tex-fmt",
-		}
-		local mr = require("mason-registry")
-		for _, tool in ipairs(formatters) do
-			local success, package = pcall(mr.get_package, tool)
-			if success and not package:is_installed() then
-				vim.cmd("MasonInstall " .. package.name)
-			end
-		end
-
-		require("conform").setup({
-			formatters_by_ft = {
-				c = { "clang-format" },
-				cpp = { "clang-format" },
-				lua = { "stylua" },
-				python = { "isort", "yapf" },
-				sh = { "shfmt" },
-				xml = { "xmlformatter" },
-				tex = { "tex-fmt" },
-				rust = { "rustfmt" },
-				["_"] = { "prettierd" },
-			},
-			-- Autoformat after save
-			-- format_on_save = {
-			-- 	timeout_ms = 5000,
-			-- 	lsp_fallback = "fallback",
-			-- },
-			vim.keymap.set({ "n", "v" }, "<leader>mp", function()
-				require("conform").format({
-					timeout_ms = 5000,
-					lsp_fallback = "fallback",
-				})
-			end, { desc = "Trigger to format current file" }),
-		})
-	end,
+	opts = {
+		formatters_by_ft = {
+			c = { "clang-format" },
+			cpp = { "clang-format" },
+			css = { "prettierd" },
+			graphql = { "prettierd" },
+			html = { "prettierd" },
+			javascript = { "prettierd" },
+			javascriptreact = { "prettierd" },
+			json = { "prettierd" },
+			jsonc = { "prettierd" },
+			lua = { "stylua" },
+			markdown = { "prettierd" },
+			python = { "ruff_organize_imports", "ruff_format" },
+			rust = { "rustfmt" },
+			scss = { "prettierd" },
+			sh = { "shfmt" },
+			tex = { "tex-fmt" },
+			typescript = { "prettierd" },
+			typescriptreact = { "prettierd" },
+			vue = { "prettierd" },
+			xml = { "xmlformatter" },
+			yaml = { "prettierd" },
+		},
+		-- Use the LSP formatter when no conform formatter is available
+		-- (or fails), so <leader>qf also works for servers like rust-analyzer.
+		default_format_opts = {
+			lsp_format = "fallback",
+		},
+		-- Autoformat after save
+		-- format_on_save = {
+		-- 	timeout_ms = 5000,
+		-- 	lsp_format = "fallback",
+		-- },
+	},
 }

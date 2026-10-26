@@ -16,14 +16,22 @@ return {
 				}
 			end,
 			integrations = {
-				barbar = true,
+				alpha = true,
 				blink_cmp = true,
-				gitsigns = true,
+				colorful_winsep = true,
+				dadbod_ui = true,
+				dap = true,
+				dap_ui = true,
+				dropbar = true,
+				flash = true,
+				lsp_trouble = true,
 				mason = true,
-				noice = true,
-				notify = true,
-				nvimtree = true,
+				mini = true,
+				notifier = true,
 				rainbow_delimiters = true,
+				render_markdown = true,
+				snacks = true,
+				which_key = true,
 			},
 		},
 		config = function(_, opts)
@@ -31,24 +39,4 @@ return {
 			vim.cmd.colorscheme("catppuccin-mocha")
 		end,
 	},
-	{
-		"folke/tokyonight.nvim",
-		event = "VeryLazy",
-		-- enabled = false,
-		-- priority = 1000,
-		-- config = function()
-		-- 	vim.cmd("colorscheme tokyonight-moon")
-		-- end,
-	},
-	{
-		"sainnhe/everforest",
-		event = "VeryLazy",
-		-- enabled = false,
-		-- priority = 1000,
-		-- config = function()
-		-- 	vim.g.everforest_background = "hard"
-		-- 	vim.cmd("colorscheme everforest")
-		-- end,
-	},
-	{ "ellisonleao/gruvbox.nvim", event = "VeryLazy" },
 }

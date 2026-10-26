@@ -5,10 +5,6 @@ return {
 		"h-hg/fcitx.nvim",
 		event = "VeryLazy",
 	},
-	-- {
-	-- 	"j-hui/fidget.nvim",
-	-- 	opts = {},
-	-- },
 	{
 		"folke/lazydev.nvim",
 		ft = "lua", -- only load on lua files
@@ -20,7 +16,6 @@ return {
 			},
 		},
 	},
-	{ "Bilal2453/luvit-meta", lazy = true },
 	{
 		"HiPhish/rainbow-delimiters.nvim",
 		event = "VeryLazy",
@@ -48,10 +43,28 @@ return {
 	-- Visualize undo history
 	{
 		"mbbill/undotree",
+		cmd = "UndotreeToggle",
+		keys = {
+			{ "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Undo Tree" },
+		},
 	},
-	{ "maan2003/lsp_lines.nvim", event = "VeryLazy" },
 	{ "nvim-lua/plenary.nvim" },
-	{ "windwp/nvim-ts-autotag", config = true },
+	{
+		"windwp/nvim-ts-autotag",
+		ft = {
+			"html",
+			"xml",
+			"javascript",
+			"typescript",
+			"javascriptreact",
+			"typescriptreact",
+			"vue",
+			"svelte",
+			"php",
+			"markdown",
+		},
+		opts = {},
+	},
 
 	{
 		"lervag/vimtex",

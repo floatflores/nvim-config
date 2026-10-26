@@ -2,38 +2,55 @@ return {
 	"mfussenegger/nvim-lint",
 	event = "VeryLazy",
 	config = function()
-		local linters = {
-			-- linter
-			"ruff",
-			"cmakelint",
-			-- "luacheck",
-			"shellcheck",
-			"markdownlint",
-		}
-		local mr = require("mason-registry")
-		for _, tool in ipairs(linters) do
-			local success, package = pcall(mr.get_package, tool)
-			if success and not package:is_installed() then
-				vim.cmd("MasonInstall " .. package.name)
-			end
-		end
-
 		local lint = require("lint")
 		lint.linters_by_ft = {
 			python = { "ruff" },
-			-- lua = { "luacheck" },
 			sh = { "shellcheck" },
 			cmake = { "cmakelint" },
 			markdown = { "markdownlint" },
-			-- rust = { "clippy" },
 		}
-		local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-		vim.api.nvim_create_autocmd({ "BufWritePost", "TextChanged" }, {
-			group = lint_augroup,
-			callback = function()
-				vim.defer_fn(lint.try_lint, 5000)
+
+		-- Debounce per buffer: lint at most once per 500ms after InsertLeave
+		-- or BufWritePost. nvim-lint cancels the previous process itself.
+		local timers = {}
+		local function schedule_lint(bufnr)
+			local timer = timers[bufnr]
+			if not timer then
+				timer = assert(vim.uv.new_timer())
+				timers[bufnr] = timer
+			end
+			timer:stop()
+			timer:start(
+				500,
+				0,
+				vim.schedule_wrap(function()
+					if vim.api.nvim_buf_is_valid(bufnr) then
+						vim.api.nvim_buf_call(bufnr, lint.try_lint)
+					end
+				end)
+			)
+		end
+
+		local group = vim.api.nvim_create_augroup("lint", { clear = true })
+		vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
+			group = group,
+			callback = function(args)
+				schedule_lint(args.buf)
 			end,
 		})
+
+		vim.api.nvim_create_autocmd("BufDelete", {
+			group = group,
+			callback = function(args)
+				local timer = timers[args.buf]
+				if timer then
+					timer:stop()
+					timer:close()
+					timers[args.buf] = nil
+				end
+			end,
+		})
+
 		vim.keymap.set("n", "<leader>ml", function()
 			lint.try_lint()
 		end, { desc = "Trigger to lint current file" })

@@ -5,7 +5,7 @@ return {
 	opts = {
 		bigfile = { enabled = true },
 		dashboard = { enabled = false },
-		explorer = { enabled = false },
+		explorer = { enabled = true },
 		indent = {
 			enabled = true,
 			animate = {
@@ -36,16 +36,6 @@ return {
 		},
 		picker = {
 			enabled = true,
-			previewers = {
-				diff = {
-					builtin = false,
-					cmd = { "delta" },
-				},
-				git = {
-					builtin = false,
-					args = {},
-				},
-			},
 			sources = {
 				spelling = {
 					layout = { preset = "select" },
@@ -92,14 +82,6 @@ return {
 				require("snacks").bufdelete.other()
 			end,
 			desc = "[Snacks] Delete other buffers",
-			mode = { "n" },
-		},
-		{
-			"<leader>cb",
-			function()
-				require("snacks").bufdelete.delete()
-			end,
-			desc = "[Snacks] Delete current buffer",
 			mode = { "n" },
 		},
 		{

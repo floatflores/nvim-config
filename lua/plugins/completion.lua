@@ -12,9 +12,6 @@ return {
 						clangd = {
 							extra_info_hl = "@comment",
 						},
-						basedpyright = {
-							extra_info_hl = "@comment",
-						},
 						fallback = true,
 					},
 					fallback_highlight = "@variable",
@@ -35,7 +32,9 @@ return {
 					desc = "Generate Annotations (Neogen)",
 				},
 			},
-			opts = { snippet_engine = "luasnip" },
+			opts = function()
+				return { snippet_engine = pcall(require, "luasnip") and "luasnip" or "nvim" }
+			end,
 		},
 	},
 	opts = {
@@ -78,7 +77,6 @@ return {
 		},
 
 		appearance = {
-			use_nvim_cmp_as_default = true,
 			nerd_font_variant = "mono",
 		},
 		signature = {
@@ -86,7 +84,7 @@ return {
 		},
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer", "dadbod", "lazydev" },
-			per_filetype = { sql = { "Dadbod" } },
+			per_filetype = { sql = { "dadbod", inherit_defaults = true } },
 			providers = {
 				buffer = { score_offset = 40 },
 				lsp = { score_offset = 90 },
@@ -120,4 +118,12 @@ return {
 		fuzzy = { implementation = "prefer_rust_with_warning" },
 	},
 	opts_extend = { "sources.default" },
+	config = function(_, opts)
+		-- Prefer LuaSnip when it is available, otherwise fall back to blink's
+		-- built-in vim.snippet support (which also reads friendly-snippets).
+		if pcall(require, "luasnip") then
+			opts.snippets = vim.tbl_deep_extend("force", opts.snippets or {}, { preset = "luasnip" })
+		end
+		require("blink.cmp").setup(opts)
+	end,
 }

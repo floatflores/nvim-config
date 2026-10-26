@@ -1,16 +1,16 @@
 vim.lsp.enable({
+	"bashls",
 	"clangd",
 	"lua_ls",
-	-- "basedpyright",
 	"pylsp",
 	"ruff",
 	"jdtls",
-	"markdown-oxide",
-	"cmake",
+	"marksman",
+	"neocmakelsp",
 	"texlab",
 	"glsl_analyzer",
 	"rust_analyzer",
-    "zls",
+	"zls",
 })
 
 -- Highlight with yanking (copying) text
@@ -22,14 +22,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 vim.diagnostic.config({
-	virtual_text = {
-		current_line = true,
-	},
-	update_in_insert = true,
+	-- Inline diagnostics are rendered by tiny-inline-diagnostic.nvim.
+	-- `virtual_text` cannot wrap long messages inside the window.
+	virtual_text = false,
+	update_in_insert = false,
 	float = {
 		severity_sort = true,
 		source = "if_many",
 		border = "single",
+		wrap = true,
 	},
 	severity_sort = true,
 	signs = {
@@ -39,11 +40,5 @@ vim.diagnostic.config({
 			[vim.diagnostic.severity.INFO] = "",
 			[vim.diagnostic.severity.HINT] = "",
 		},
-		-- text = {
-		-- 	[vim.diagnostic.severity.ERROR] = "✘",
-		-- 	[vim.diagnostic.severity.WARN] = "▲",
-		-- 	[vim.diagnostic.severity.HINT] = "⚑",
-		-- 	[vim.diagnostic.severity.INFO] = "»",
-		-- },
 	},
 })

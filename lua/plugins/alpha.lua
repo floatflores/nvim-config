@@ -32,19 +32,17 @@ return {
 
 			dashboard.section.buttons.val = {}
 			dashboard.section.footer.val = "好久不见，想我了吗～"
+			dashboard.section.header.opts.hl = "AlphaHeader"
+			dashboard.section.footer.opts.hl = "AlphaFooter"
 
 			alpha.setup(dashboard.config)
 
-			vim.api.nvim_create_autocmd("ColorScheme", {
-				callback = function()
-					vim.cmd([[
-            hi AlphaHeader  guifg=#FF69B4 ctermfg=204
-            hi AlphaButton  guifg=#87CEEB ctermfg=117
-            hi AlphaFooter  guifg=#98FB98 ctermfg=120
-            hi AlphaButtons guibg=NONE    ctermbg=NONE
-          ]])
-				end,
-			})
+			local function set_highlights()
+				vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#FF69B4", ctermfg = 204 })
+				vim.api.nvim_set_hl(0, "AlphaFooter", { fg = "#98FB98", ctermfg = 120 })
+			end
+			set_highlights()
+			vim.api.nvim_create_autocmd("ColorScheme", { callback = set_highlights })
 		end,
 	},
 }
