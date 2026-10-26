@@ -48,6 +48,11 @@ return {
 			["<C-f>"] = { "scroll_documentation_up", "fallback" },
 			["<C-b>"] = { "scroll_documentation_down", "fallback" },
 			["<CR>"] = { "accept", "fallback" },
+			-- Signature help: toggle the window and scroll it without touching
+			-- any terminal/Neovim insert-mode defaults.
+			["<A-s>"] = { "show_signature", "hide_signature" },
+			["<A-j>"] = { "scroll_signature_down" },
+			["<A-k>"] = { "scroll_signature_up" },
 		},
 		completion = {
 			keyword = { range = "full" },
@@ -80,7 +85,12 @@ return {
 			nerd_font_variant = "mono",
 		},
 		signature = {
-			window = { border = "single" },
+			enabled = true,
+			trigger = {
+				show_on_insert = true,
+				show_on_insert_on_trigger_character = true,
+			},
+			window = { border = "single", show_documentation = true },
 		},
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer", "dadbod", "lazydev" },
