@@ -9,7 +9,7 @@ return {
 				tabline = 500,
 				winbar = 500,
 			},
-			theme = "catppuccin",
+			theme = "catppuccin-mocha",
 			always_divide_middle = false,
 			component_separators = { left = "", right = "" },
 			section_separators = { left = "", right = "" },
